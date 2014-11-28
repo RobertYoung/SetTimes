@@ -1,5 +1,5 @@
 //
-//  RYViewController.h
+//  SetTimesTableViewController.h
 //  Set Tracker
 //
 //  Created by Robert Young on 17/08/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RYViewController : UIViewController
+@interface SetTimesTableViewController : UITableViewController
 
 @end
