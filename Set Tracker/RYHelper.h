@@ -10,4 +10,6 @@
 
 @interface RYHelper : NSObject
 
+- (UIImage *)imageByCroppingImage:(UIImage *)image;
+
 @end

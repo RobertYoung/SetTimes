@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define SET_TIMES_CELL_HEIGHT 85
+
 @interface RYSetTimesTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) IBOutlet UILabel *artistNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
 
 @end

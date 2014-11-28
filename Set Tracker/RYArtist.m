@@ -10,4 +10,18 @@
 
 @implementation RYArtist
 
+-(id)initWithName:(NSString *)name withStartTime:(NSDate *)startTime withProfileImage:(UIImage *)profileImage{
+    
+    self.name = name;
+    self.startTime = startTime;
+    self.profileImage = profileImage;
+
+    return self;
+};
+
+-(NSString *) displayArtistInformation
+{
+    return [NSString stringWithFormat:@"Name: %@, Start Time %@, Profile Image %@", self.name, self.startTime, self.profileImage];
+}
+
 @end

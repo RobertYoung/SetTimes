@@ -10,4 +10,11 @@
 
 @interface RYArtist : NSObject
 
+@property (strong, nonatomic) NSString * name;
+@property (strong, nonatomic) NSDate * startTime;
+@property (strong, nonatomic) UIImage * profileImage;
+
+-(id)initWithName:(NSString *)name withStartTime:(NSDate *)startTime withProfileImage:(UIImage *)profileImage;
+-(NSString *) displayArtistInformation;
+
 @end

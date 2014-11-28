@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180BFBCA1A27E05B00DEF1CA /* RYArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 180BFBC91A27E05B00DEF1CA /* RYArtist.m */; };
+		180BFBCD1A27E44F00DEF1CA /* RYArtistProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180BFBCC1A27E44F00DEF1CA /* RYArtistProfileViewController.m */; };
 		183A145F19A154C5000DE1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A145E19A154C5000DE1B9 /* Foundation.framework */; };
 		183A146119A154C5000DE1B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A146019A154C5000DE1B9 /* CoreGraphics.framework */; };
 		183A146319A154C5000DE1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A146219A154C5000DE1B9 /* UIKit.framework */; };
@@ -14,13 +16,23 @@
 		183A146B19A154C5000DE1B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A146A19A154C5000DE1B9 /* main.m */; };
 		183A146F19A154C5000DE1B9 /* RYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A146E19A154C5000DE1B9 /* RYAppDelegate.m */; };
 		183A147219A154C5000DE1B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183A147019A154C5000DE1B9 /* Main.storyboard */; };
-		183A147519A154C5000DE1B9 /* RYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A147419A154C5000DE1B9 /* RYViewController.m */; };
 		183A147719A154C5000DE1B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183A147619A154C5000DE1B9 /* Images.xcassets */; };
 		183A147E19A154C6000DE1B9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A147D19A154C6000DE1B9 /* XCTest.framework */; };
 		183A147F19A154C6000DE1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A145E19A154C5000DE1B9 /* Foundation.framework */; };
 		183A148019A154C6000DE1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A146219A154C5000DE1B9 /* UIKit.framework */; };
 		183A148819A154C6000DE1B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 183A148619A154C6000DE1B9 /* InfoPlist.strings */; };
 		183A148A19A154C6000DE1B9 /* Set_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A148919A154C6000DE1B9 /* Set_TrackerTests.m */; };
+		183A149519A154FE000DE1B9 /* SetTimesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A149419A154FE000DE1B9 /* SetTimesTableViewController.m */; };
+		183A149719A15946000DE1B9 /* disco_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 183A149619A15946000DE1B9 /* disco_background.jpg */; };
+		184D33DD19A2087800251F30 /* Hero Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 184D33DB19A2082F00251F30 /* Hero Light.otf */; };
+		184D33DE19A2087800251F30 /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = 184D33DC19A2082F00251F30 /* Hero.otf */; };
+		184D33E219A2106600251F30 /* shadowchild.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184D33E019A2106600251F30 /* shadowchild.jpg */; };
+		184D33E319A2106600251F30 /* hannahwants.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 184D33E119A2106600251F30 /* hannahwants.jpeg */; };
+		184D33E719A2118400251F30 /* RYSetTimesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D33E519A2118400251F30 /* RYSetTimesTableViewCell.m */; };
+		184D33E819A2118400251F30 /* RYSetTimesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D33E619A2118400251F30 /* RYSetTimesTableViewCell.xib */; };
+		184D33ED19A3C5B600251F30 /* RYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D33EC19A3C5B600251F30 /* RYHelper.m */; };
+		184D33EF19A3C64100251F30 /* mask.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184D33EE19A3C64100251F30 /* mask.jpg */; };
+		184D33F119A3C77A00251F30 /* mk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184D33F019A3C77A00251F30 /* mk.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180BFBC81A27E05A00DEF1CA /* RYArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYArtist.h; sourceTree = "<group>"; };
+		180BFBC91A27E05B00DEF1CA /* RYArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYArtist.m; sourceTree = "<group>"; };
+		180BFBCB1A27E44F00DEF1CA /* RYArtistProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYArtistProfileViewController.h; sourceTree = "<group>"; };
+		180BFBCC1A27E44F00DEF1CA /* RYArtistProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYArtistProfileViewController.m; sourceTree = "<group>"; };
 		183A145B19A154C5000DE1B9 /* Set Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		183A145E19A154C5000DE1B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		183A146019A154C5000DE1B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +61,26 @@
 		183A146D19A154C5000DE1B9 /* RYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYAppDelegate.h; sourceTree = "<group>"; };
 		183A146E19A154C5000DE1B9 /* RYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYAppDelegate.m; sourceTree = "<group>"; };
 		183A147119A154C5000DE1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		183A147319A154C5000DE1B9 /* RYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYViewController.h; sourceTree = "<group>"; };
-		183A147419A154C5000DE1B9 /* RYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYViewController.m; sourceTree = "<group>"; };
 		183A147619A154C5000DE1B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		183A147C19A154C6000DE1B9 /* Set TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Set TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		183A147D19A154C6000DE1B9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		183A148519A154C6000DE1B9 /* Set TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Set TrackerTests-Info.plist"; sourceTree = "<group>"; };
 		183A148719A154C6000DE1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		183A148919A154C6000DE1B9 /* Set_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Set_TrackerTests.m; sourceTree = "<group>"; };
+		183A149319A154FE000DE1B9 /* SetTimesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTimesTableViewController.h; sourceTree = "<group>"; };
+		183A149419A154FE000DE1B9 /* SetTimesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTimesTableViewController.m; sourceTree = "<group>"; };
+		183A149619A15946000DE1B9 /* disco_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = disco_background.jpg; sourceTree = "<group>"; };
+		184D33DB19A2082F00251F30 /* Hero Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero Light.otf"; sourceTree = "<group>"; };
+		184D33DC19A2082F00251F30 /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.otf; sourceTree = "<group>"; };
+		184D33E019A2106600251F30 /* shadowchild.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shadowchild.jpg; sourceTree = "<group>"; };
+		184D33E119A2106600251F30 /* hannahwants.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hannahwants.jpeg; sourceTree = "<group>"; };
+		184D33E419A2118400251F30 /* RYSetTimesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYSetTimesTableViewCell.h; sourceTree = "<group>"; };
+		184D33E519A2118400251F30 /* RYSetTimesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYSetTimesTableViewCell.m; sourceTree = "<group>"; };
+		184D33E619A2118400251F30 /* RYSetTimesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYSetTimesTableViewCell.xib; sourceTree = "<group>"; };
+		184D33EB19A3C5B600251F30 /* RYHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYHelper.h; sourceTree = "<group>"; };
+		184D33EC19A3C5B600251F30 /* RYHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYHelper.m; sourceTree = "<group>"; };
+		184D33EE19A3C64100251F30 /* mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mask.jpg; sourceTree = "<group>"; };
+		184D33F019A3C77A00251F30 /* mk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mk.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +140,12 @@
 		183A146419A154C5000DE1B9 /* Set Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				184D33EA19A3C5A500251F30 /* Helper */,
+				184D33E919A2118D00251F30 /* Set Times */,
+				184D33D919A207A500251F30 /* Resources */,
 				183A146D19A154C5000DE1B9 /* RYAppDelegate.h */,
 				183A146E19A154C5000DE1B9 /* RYAppDelegate.m */,
 				183A147019A154C5000DE1B9 /* Main.storyboard */,
-				183A147319A154C5000DE1B9 /* RYViewController.h */,
-				183A147419A154C5000DE1B9 /* RYViewController.m */,
 				183A147619A154C5000DE1B9 /* Images.xcassets */,
 				183A146519A154C5000DE1B9 /* Supporting Files */,
 			);
@@ -150,6 +179,61 @@
 				183A148619A154C6000DE1B9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		184D33D919A207A500251F30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				184D33DF19A2105700251F30 /* Images */,
+				184D33DA19A207AC00251F30 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		184D33DA19A207AC00251F30 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				184D33DB19A2082F00251F30 /* Hero Light.otf */,
+				184D33DC19A2082F00251F30 /* Hero.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		184D33DF19A2105700251F30 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				184D33F019A3C77A00251F30 /* mk.jpg */,
+				184D33EE19A3C64100251F30 /* mask.jpg */,
+				183A149619A15946000DE1B9 /* disco_background.jpg */,
+				184D33E019A2106600251F30 /* shadowchild.jpg */,
+				184D33E119A2106600251F30 /* hannahwants.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		184D33E919A2118D00251F30 /* Set Times */ = {
+			isa = PBXGroup;
+			children = (
+				180BFBCB1A27E44F00DEF1CA /* RYArtistProfileViewController.h */,
+				180BFBCC1A27E44F00DEF1CA /* RYArtistProfileViewController.m */,
+				183A149319A154FE000DE1B9 /* SetTimesTableViewController.h */,
+				183A149419A154FE000DE1B9 /* SetTimesTableViewController.m */,
+				184D33E419A2118400251F30 /* RYSetTimesTableViewCell.h */,
+				184D33E519A2118400251F30 /* RYSetTimesTableViewCell.m */,
+				184D33E619A2118400251F30 /* RYSetTimesTableViewCell.xib */,
+				180BFBC81A27E05A00DEF1CA /* RYArtist.h */,
+				180BFBC91A27E05B00DEF1CA /* RYArtist.m */,
+			);
+			name = "Set Times";
+			sourceTree = "<group>";
+		};
+		184D33EA19A3C5A500251F30 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				184D33EB19A3C5B600251F30 /* RYHelper.h */,
+				184D33EC19A3C5B600251F30 /* RYHelper.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +313,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184D33E319A2106600251F30 /* hannahwants.jpeg in Resources */,
+				184D33EF19A3C64100251F30 /* mask.jpg in Resources */,
+				184D33DD19A2087800251F30 /* Hero Light.otf in Resources */,
+				184D33E819A2118400251F30 /* RYSetTimesTableViewCell.xib in Resources */,
+				184D33F119A3C77A00251F30 /* mk.jpg in Resources */,
+				184D33DE19A2087800251F30 /* Hero.otf in Resources */,
 				183A147719A154C5000DE1B9 /* Images.xcassets in Resources */,
+				184D33E219A2106600251F30 /* shadowchild.jpg in Resources */,
 				183A146919A154C5000DE1B9 /* InfoPlist.strings in Resources */,
+				183A149719A15946000DE1B9 /* disco_background.jpg in Resources */,
 				183A147219A154C5000DE1B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,9 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184D33E719A2118400251F30 /* RYSetTimesTableViewCell.m in Sources */,
+				184D33ED19A3C5B600251F30 /* RYHelper.m in Sources */,
 				183A146B19A154C5000DE1B9 /* main.m in Sources */,
-				183A147519A154C5000DE1B9 /* RYViewController.m in Sources */,
+				180BFBCA1A27E05B00DEF1CA /* RYArtist.m in Sources */,
+				183A149519A154FE000DE1B9 /* SetTimesTableViewController.m in Sources */,
 				183A146F19A154C5000DE1B9 /* RYAppDelegate.m in Sources */,
+				180BFBCD1A27E44F00DEF1CA /* RYArtistProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +553,7 @@
 				183A148F19A154C6000DE1B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		183A149019A154C6000DE1B9 /* Build configuration list for PBXNativeTarget "Set TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +562,7 @@
 				183A149219A154C6000DE1B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

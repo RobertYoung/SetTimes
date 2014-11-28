@@ -10,4 +10,7 @@
 
 @interface SetTimesTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navigationTitleLabel;
+@property (strong, nonatomic) NSMutableArray * setTimes;
+
 @end

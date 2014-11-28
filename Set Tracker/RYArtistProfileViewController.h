@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RYArtist.h"
 
 @interface RYArtistProfileViewController : UIViewController
+
+@property (strong, nonatomic) RYArtist * artist;
 
 @end
