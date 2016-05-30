@@ -32,7 +32,8 @@ class MyApp {
 
   constructor(
     private platform: Platform,
-    private menu: MenuController
+    private menu: MenuController,
+    private auth: AuthService
   ) {
     this.initializeApp();
 
@@ -48,6 +49,7 @@ class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      this.auth.startupTokenRefresh();
     });
   }
 
