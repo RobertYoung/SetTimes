@@ -1,5 +1,6 @@
-import {Page} from 'ionic-angular';
+import {Page, NavController, NavParams} from 'ionic-angular';
 import {Event} from './../../models/Event';
+import {EventDetailPage} from '../event-detail/event-detail';
 
 @Page({
   templateUrl: 'build/pages/event-list/event-list.html'
@@ -8,27 +9,33 @@ import {Event} from './../../models/Event';
 export class EventListPage {
   eventList: Array<Event>;
 
-  constructor() {
+  constructor(private nav: NavController, navParams: NavParams) {
     this.eventList = [];
     this.eventList.push(<Event>{
-      eventName: "Parklife",
+      name: "Parklife",
       imageUrl: "img/event1.jpg",
       venue: "Heaton Park"
     });
     this.eventList.push(<Event>{
-      eventName: "Ants",
+      name: "Ants",
       imageUrl: "img/event2.png",
       venue: "Ushuaia Hotel"
     });
     this.eventList.push(<Event>{
-      eventName: "Usual Suspects",
+      name: "Usual Suspects",
       imageUrl: "img/event3.jpg",
       venue: "Sankeys Ibiza"
     });
     this.eventList.push(<Event>{
-      eventName: "Vagabundos",
+      name: "Vagabundos",
       imageUrl: "img/event4.jpg",
       venue: "Pacha Ibiza"
+    });
+  }
+
+  eventTapped($event, event: Event) {
+    this.nav.push(EventDetailPage, {
+      event: event
     });
   }
 }

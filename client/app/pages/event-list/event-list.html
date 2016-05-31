@@ -1,14 +1,33 @@
-<ion-navbar *navbar>
-  <button menuToggle *ngIf="!selectedItem">
-    <ion-icon name="menu"></ion-icon>
-  </button>
+<ion-toolbar>
+  <ion-buttons start>
+    <button menuToggle royal *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+
   <ion-title>Events</ion-title>
-</ion-navbar>
+
+  <ion-buttons end>
+    <button royal>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
 
 <ion-content class="card-background-page">
-  <ion-card *ngFor="let event of eventList">
+  <ion-card *ngFor="let event of eventList" (click)="eventTapped($event, event)">
     <img src="{{event.imageUrl}}"/>
     <div class="card-title">{{event.name}}</div>
     <div class="card-subtitle">{{event.venue}}</div>
   </ion-card>
 </ion-content>
+
+<ion-toolbar position="bottom">
+  <p>Ash, Misty, Brock</p>
+  <ion-buttons end>
+    <button royal>
+      Create Event
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
