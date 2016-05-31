@@ -8,7 +8,6 @@ import {ListPage} from './pages/list/list';
 import {LoginPage} from './pages/login/login';
 import {AuthService} from './services/auth/auth';
 
-
 @App({
   templateUrl: 'build/app.html',
   config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
@@ -58,5 +57,11 @@ class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+  logout() {
+    this.auth.logout();
+    this.menu.close();
+    this.nav.setRoot(LoginPage);
   }
 }
