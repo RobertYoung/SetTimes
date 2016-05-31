@@ -7,6 +7,7 @@ import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
 import {LoginPage} from './pages/login/login';
 import {AuthService} from './services/auth/auth';
+import {EventListPage} from './pages/event-list/event-list';
 
 @App({
   templateUrl: 'build/app.html',
@@ -38,8 +39,9 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Events', component: EventListPage },
+      { title: 'Artists', component: HelloIonicPage },
+      { title: 'Leaderboard', component: ListPage }
     ];
   }
 
