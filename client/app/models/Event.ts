@@ -1,3 +1,5 @@
+import {SetTimes} from './SetTimes';
+
 export class Event {
   public eventId: string;
   public name: string;
@@ -5,6 +7,7 @@ export class Event {
   public endTime: Date;
   public venue: string;
   public imageUrl: string;
+  public setTimes: Array<SetTimes>;
 
   constructor() {}
 }
