@@ -1,4 +1,5 @@
 var express = require('express');
+var proxy = require('express-http-proxy');
 var app = express();
 var jwt = require('express-jwt');
 
@@ -8,6 +9,12 @@ var jwtCheck = jwt({
 });
 
 app.use('/', jwtCheck);
+
+app.use('/proxy', proxy('www.google.com', {
+  forwardPath: function(req, res) {
+    return require('url').parse(req.url).path;
+  }
+}));
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
