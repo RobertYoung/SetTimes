@@ -28,7 +28,8 @@ export class EventListPage {
           {
             name: "DJ Rob Young",
             startTime: new Date(),
-            setLength: 120
+            setLength: 120,
+            imageUrl: "img/artist1.jpg"
           }
         ]
       }

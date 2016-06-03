@@ -6,5 +6,22 @@
 </ion-navbar>
 
 <ion-content>
-  Set itmes
+  <ion-item-group>
+    <div *ngFor="let room of setTimes.rooms">
+      <ion-item-divider light>{{room.name}}</ion-item-divider>
+
+      <ion-card *ngFor="let artist of room.artists">
+        <img src="{{artist.imageUrl}}"/>
+        <ion-card-content>
+          <ion-card-title>
+            {{artist.name}}
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-item-group>
 </ion-content>
