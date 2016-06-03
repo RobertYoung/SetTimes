@@ -23,8 +23,8 @@
       {{setTimes.createdBy.username}}
     </ion-card-header>
     <ion-card-content>
-      Rooms: {{setTimes.getTotalRooms()}}
-      Artists: {{setTimes.getTotalArtists()}}
+      Rooms: {{setTimes.rooms.length}}
+      Artists: {{getTotalArtists(setTimes)}}
     </ion-card-content>
   </ion-card>
 

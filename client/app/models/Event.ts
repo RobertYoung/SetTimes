@@ -12,9 +12,4 @@ export class Event {
 
   constructor() {}
 
-  getSetTimesById(id: number) : SetTimes {
-    return _.find(this.setTimes, (data: SetTimes) => {
-        return data._id === id;
-    });
-  }
 }

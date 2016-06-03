@@ -1,7 +1,9 @@
 import {Page, NavController, NavParams, Alert} from 'ionic-angular';
 import {Event} from './../../models/Event';
+import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
 import {SetTimesPage} from './../set-times/set-times.page';
+import {SearchService} from '../../services/helpers/search.service';
 
 @Page({
   templateUrl: 'build/pages/event-detail/event-detail.page.html'
@@ -10,7 +12,7 @@ import {SetTimesPage} from './../set-times/set-times.page';
 export class EventDetailPage {
   event: Event;
 
-  constructor(private nav: NavController, navParams: NavParams) {
+  constructor(private nav: NavController, private navParams: NavParams, private search: SearchService) {
     this.event = navParams.data.event;
   }
 
@@ -29,5 +31,9 @@ export class EventDetailPage {
       event: this.event,
       setTimes: setTimes
     });
+  }
+
+  getTotalArtists(setTimes: SetTimes) : number {
+    return this.search.getTotalArtists(setTimes);
   }
 }

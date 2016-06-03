@@ -1,6 +1,6 @@
 import {Page, NavController} from 'ionic-angular';
 import {AuthService} from '../../services/auth/auth.service';
-import {HelloIonicPage} from '../hello-ionic/hello-ionic';
+import {EventListPage} from '../event-list/event-list.page';
 
 @Page({
   templateUrl: 'build/pages/login/login.page.html'
@@ -17,6 +17,6 @@ export class LoginPage {
   }
 
   goToEvents() : void {
-    this.nav.setRoot(HelloIonicPage);
+    this.nav.setRoot(EventListPage);
   }
 }
