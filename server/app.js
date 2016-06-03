@@ -4,7 +4,7 @@ var app = express();
 var jwt = require('express-jwt');
 
 var jwtCheck = jwt({
-  secret: new Buffer('aS8JNASnKL5-B2o8OLvy6jZlV3Un2mm_es3WQQ1QEkAe_Zdvl1EjiG6SDx6cQKpg', 'base64'),
+  secret: new Buffer(process.env.AUTH0_CLIENT_SECRET,, 'base64'),
   audience: '4zTcIczty7HnK4cbkVM2tSlzYHL9idxZ'
 });
 
