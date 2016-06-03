@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <ion-card *ngFor="let setTimes of event.setTimes">
+  <ion-card *ngFor="let setTimes of event.setTimes" (click)="goToSetTimes(setTimes)">
     <ion-card-header>
       {{setTimes.createdBy.username}}
     </ion-card-header>

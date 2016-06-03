@@ -7,6 +7,7 @@ import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {LoginPage} from './pages/login/login.page';
 import {AuthService} from './services/auth/auth.service';
 import {EventListPage} from './pages/event-list/event-list.page';
+import {SearchService} from './services/helpers/search.service';
 
 @App({
   templateUrl: 'build/app.html',
@@ -18,7 +19,8 @@ import {EventListPage} from './pages/event-list/event-list.page';
       },
       deps: [Http]
     }),
-    AuthService
+    AuthService,
+    SearchService
   ]
 })
 class MyApp {
