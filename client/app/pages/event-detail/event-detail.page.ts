@@ -1,8 +1,9 @@
 import {Page, NavController, NavParams, Alert} from 'ionic-angular';
 import {Event} from './../../models/Event';
+import {SetTimesPage} from './../set-times/set-times.page';
 
 @Page({
-  templateUrl: 'build/pages/event-detail/event-detail.html'
+  templateUrl: 'build/pages/event-detail/event-detail.page.html'
 })
 
 export class EventDetailPage {
@@ -20,5 +21,12 @@ export class EventDetailPage {
     });
 
     this.nav.present(alert);
+  }
+
+  goToSetTimes(id: number) {
+    this.nav.push(EventDetailPage, {
+      event: event,
+      setTimesId: id
+    });
   }
 }

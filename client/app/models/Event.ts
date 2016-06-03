@@ -1,4 +1,5 @@
 import {SetTimes} from './SetTimes';
+import * as _ from 'lodash';
 
 export class Event {
   public eventId: string;
@@ -10,4 +11,10 @@ export class Event {
   public setTimes: Array<SetTimes>;
 
   constructor() {}
+
+  getSetTimesById(id: number) : SetTimes {
+    return _.find(this.setTimes, (data: SetTimes) => {
+        return data._id === id;
+    });
+  }
 }

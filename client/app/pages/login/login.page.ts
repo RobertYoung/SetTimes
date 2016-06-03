@@ -1,9 +1,9 @@
 import {Page, NavController} from 'ionic-angular';
-import {AuthService} from '../../services/auth/auth';
+import {AuthService} from '../../services/auth/auth.service';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 
 @Page({
-  templateUrl: 'build/pages/login/login.html'
+  templateUrl: 'build/pages/login/login.page.html'
 })
 export class LoginPage {
   auth: AuthService;

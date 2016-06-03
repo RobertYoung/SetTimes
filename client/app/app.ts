@@ -4,10 +4,9 @@ import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
-import {LoginPage} from './pages/login/login';
-import {AuthService} from './services/auth/auth';
-import {EventListPage} from './pages/event-list/event-list';
+import {LoginPage} from './pages/login/login.page';
+import {AuthService} from './services/auth/auth.service';
+import {EventListPage} from './pages/event-list/event-list.page';
 
 @App({
   templateUrl: 'build/app.html',
@@ -40,8 +39,7 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Events', component: EventListPage },
-      { title: 'Artists', component: HelloIonicPage },
-      { title: 'Leaderboard', component: ListPage }
+      { title: 'Artists', component: HelloIonicPage }
     ];
   }
 

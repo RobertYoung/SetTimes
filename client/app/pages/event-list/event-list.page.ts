@@ -1,11 +1,11 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Event} from './../../models/Event';
-import {EventDetailPage} from '../event-detail/event-detail';
+import {EventDetailPage} from '../event-detail/event-detail.page';
 import {SetTimes} from '../../models/SetTimes';
 import {Room} from '../../models/Room';
 
 @Page({
-  templateUrl: 'build/pages/event-list/event-list.html'
+  templateUrl: 'build/pages/event-list/event-list.page.html'
 })
 
 export class EventListPage {
