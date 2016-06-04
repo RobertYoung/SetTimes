@@ -4,7 +4,7 @@ import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
 import {Artist} from './../../models/Artist';
-import * as moment from 'moment';
+import {SetTimesArtistSearchPage} from '../set-times-artist-search/set-times-artist-search.page';
 
 @Page({
   templateUrl: 'build/pages/set-times-artist/set-times-artist.page.html'
@@ -27,4 +27,7 @@ export class SetTimesArtistPage implements OnInit {
 
   }
 
+  goToArtistSearchPage() {
+    this.nav.push(SetTimesArtistSearchPage);
+  }
 }
