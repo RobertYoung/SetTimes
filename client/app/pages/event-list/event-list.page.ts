@@ -22,17 +22,71 @@ export class EventListPage {
     setTimes1.votes = 15;
     setTimes1.rooms = [<Room>
       {
-        name: "Main Temple",
+        name: "Paradise",
         startTime: new Date(),
         artists: [
           {
-            name: "DJ Rob Young",
+            name: "Jamie Jones",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist1.jpg"
+            imageUrl: "img/artist2.jpg"
+          },
+          {
+            name: "Joseph Capriati",
+            startTime: new Date(),
+            setLength: 120,
+            imageUrl: "img/artist3.jpg"
+          },
+          {
+            name: "KiNK",
+            startTime: new Date(),
+            setLength: 120,
+            imageUrl: "img/artist4.jpg"
+          },
+          {
+            name: "Black Coffee",
+            startTime: new Date(),
+            setLength: 120,
+            imageUrl: "img/artist6.jpg"
+          },
+          {
+            name: "Patrick Topping",
+            startTime: new Date(),
+            setLength: 120,
+            imageUrl: "img/artist5.jpg"
           }
         ]
-      }
+      },
+      <Room>
+        {
+          name: "Elrow",
+          startTime: new Date(),
+          artists: [
+            {
+              name: "Eats Everything",
+              startTime: new Date(),
+              setLength: 120,
+              imageUrl: "img/artist7.jpg"
+            },
+            {
+              name: "Joris Voorn",
+              startTime: new Date(),
+              setLength: 120,
+              imageUrl: "img/artist8.jpg"
+            },
+            {
+              name: "Jackmaster",
+              startTime: new Date(),
+              setLength: 120,
+              imageUrl: "img/artist9.jpg"
+            },
+            {
+              name: "Skream",
+              startTime: new Date(),
+              setLength: 120,
+              imageUrl: "img/artist10.jpg"
+            }          ]
+        }
     ];
 
     this.eventList.push(<Event>{

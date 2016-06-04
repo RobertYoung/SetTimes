@@ -8,14 +8,12 @@
 <ion-content>
   <img src="{{event.imageUrl}}"/>
 
-  <div >
-    <div class="card-title">{{event.name}}</div>
-    <div class="card-subtitle">{{event.venue}}</div>
+  <div padding>
+    <h3>{{event.name}}</h3>
+    <h5>{{event.venue}}</h5>
 
-    <div padding>
-      <button outline block (click)="requestBountyButtonPressed()">Request Set Times</button>
-      <button block>Add Set Times</button>
-    </div>
+    <button outline block (click)="requestBountyButtonPressed()">Request Set Times</button>
+    <button block>Add Set Times</button>
   </div>
 
   <ion-card *ngFor="let setTimes of event.setTimes" (click)="goToSetTimes(setTimes)">
@@ -23,8 +21,13 @@
       {{setTimes.createdBy.username}}
     </ion-card-header>
     <ion-card-content>
-      Rooms: {{setTimes.rooms.length}}
-      Artists: {{getTotalArtists(setTimes)}}
+      <p>Rooms: {{setTimes.rooms.length}}</p>
+      <p>Artists: {{getTotalArtists(setTimes)}}</p>
+      <p>Rating</p>
+      <p>Vote Up</p>
+      <p>Vote Down</p>
+      <p>Summary of rooms / artists</p>
+
     </ion-card-content>
   </ion-card>
 
