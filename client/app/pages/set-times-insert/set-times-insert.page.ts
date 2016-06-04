@@ -3,18 +3,16 @@ import {Event} from './../../models/Event';
 import {SetTimes} from './../../models/SetTimes';
 
 @Page({
-  templateUrl: 'build/pages/set-times/set-times.page.html'
+  templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html'
 })
 
 export class SetTimesInsertPage {
   event: Event;
   setTimes: SetTimes;
+  points: number = 200;
 
-  constructor(private nav: NavController, navParams: NavParams, search: SearchService) {
+  constructor(private nav: NavController, navParams: NavParams) {
     this.event = navParams.data.event;
-    this.setTimes = navParams.data.setTimes;
-
-    console.log(this.setTimes);
   }
 
 }

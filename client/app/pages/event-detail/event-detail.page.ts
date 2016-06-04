@@ -3,6 +3,7 @@ import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
 import {SetTimesPage} from './../set-times/set-times.page';
+import {SetTimesInsertPage} from './../set-times-insert/set-times-insert.page';
 import {SearchService} from '../../services/helpers/search.service';
 
 @Page({
@@ -24,6 +25,12 @@ export class EventDetailPage {
     });
 
     this.nav.present(alert);
+  }
+
+  addSetTimes() {
+    this.nav.push(SetTimesInsertPage, {
+      event: this.event
+    });
   }
 
   goToSetTimes(setTimes: SetTimes) {

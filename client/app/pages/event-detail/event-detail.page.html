@@ -13,7 +13,7 @@
     <h5>{{event.venue}}</h5>
 
     <button outline block (click)="requestBountyButtonPressed()">Request Set Times</button>
-    <button block>Add Set Times</button>
+    <button block (click)="addSetTimes()">Add Set Times</button>
   </div>
 
   <ion-card *ngFor="let setTimes of event.setTimes" (click)="goToSetTimes(setTimes)">

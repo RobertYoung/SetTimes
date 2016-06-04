@@ -1,0 +1,45 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Create Set Times</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <scroll-content>
+    <ion-list>
+      <ion-list-header>
+        Rooms
+      </ion-list-header>
+      <a class="item" ion-item>
+        <ion-label>
+          Add a new room
+        </ion-label>
+        <ion-button-effect></ion-button-effect>
+      </a>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Other Information
+      </ion-list-header>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <button outline block>Preview</button>
+      <button block>Submit</button>
+    </div>
+
+  </scroll-content>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-toolbar position="bottom">
+  Points for this event: {{points}}
+</ion-toolbar>
+<!-- /FOOTER -->
