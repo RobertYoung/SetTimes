@@ -7,6 +7,7 @@ import {LoginPage} from './pages/login/login.page';
 import {AuthService} from './services/auth/auth.service';
 import {EventListPage} from './pages/event-list/event-list.page';
 import {SearchService} from './services/helpers/search.service';
+import {ArtistCard} from './components/artist-card/artist-card.component';
 
 @App({
   templateUrl: 'build/app.html',
@@ -20,7 +21,8 @@ import {SearchService} from './services/helpers/search.service';
     }),
     AuthService,
     SearchService
-  ]
+  ],
+  directives: [ArtistCard]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
