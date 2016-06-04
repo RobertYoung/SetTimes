@@ -16,6 +16,7 @@
     <button block (click)="addSetTimes()">Add Set Times</button>
   </div>
 
+  <h5 padding>Submitted Set Times</h5>
   <ion-card *ngFor="let setTimes of event.setTimes" (click)="goToSetTimes(setTimes)">
     <ion-card-header>
       {{setTimes.createdBy.username}}

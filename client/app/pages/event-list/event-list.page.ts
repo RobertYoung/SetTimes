@@ -29,31 +29,31 @@ export class EventListPage {
             name: "Jamie Jones",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist2.jpg"
+            imageUrl: "img/dummy/artist2.jpg"
           },
           {
             name: "Joseph Capriati",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist3.jpg"
+            imageUrl: "img/dummy/artist3.jpg"
           },
           {
             name: "KiNK",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist4.jpg"
+            imageUrl: "img/dummy/artist4.jpg"
           },
           {
             name: "Black Coffee",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist6.jpg"
+            imageUrl: "img/dummy/artist6.jpg"
           },
           {
             name: "Patrick Topping",
             startTime: new Date(),
             setLength: 120,
-            imageUrl: "img/artist5.jpg"
+            imageUrl: "img/dummy/artist5.jpg"
           }
         ]
       },
@@ -66,32 +66,32 @@ export class EventListPage {
               name: "Eats Everything",
               startTime: new Date(),
               setLength: 120,
-              imageUrl: "img/artist7.jpg"
+              imageUrl: "img/dummy/artist7.jpg"
             },
             {
               name: "Joris Voorn",
               startTime: new Date(),
               setLength: 120,
-              imageUrl: "img/artist8.jpg"
+              imageUrl: "img/dummy/artist8.jpg"
             },
             {
               name: "Jackmaster",
               startTime: new Date(),
               setLength: 120,
-              imageUrl: "img/artist9.jpg"
+              imageUrl: "img/dummy/artist9.jpg"
             },
             {
               name: "Skream",
               startTime: new Date(),
               setLength: 120,
-              imageUrl: "img/artist10.jpg"
+              imageUrl: "img/dummy/artist10.jpg"
             }          ]
         }
     ];
 
     this.eventList.push(<Event>{
       name: "Parklife",
-      imageUrl: "img/event1.jpg",
+      imageUrl: "img/dummy/event1.jpg",
       venue: "Heaton Park",
       startTime: new Date(),
       setTimes: [setTimes1]
@@ -99,19 +99,19 @@ export class EventListPage {
 
     this.eventList.push(<Event>{
       name: "Ants",
-      imageUrl: "img/event2.png",
+      imageUrl: "img/dummy/event2.png",
       venue: "Ushuaia Hotel"
     });
 
     this.eventList.push(<Event>{
       name: "Usual Suspects",
-      imageUrl: "img/event3.jpg",
+      imageUrl: "img/dummy/event3.jpg",
       venue: "Sankeys Ibiza"
     });
 
     this.eventList.push(<Event>{
       name: "Vagabundos",
-      imageUrl: "img/event4.jpg",
+      imageUrl: "img/dummy/event4.jpg",
       venue: "Pacha Ibiza"
     });
   }

@@ -6,7 +6,38 @@
 </ion-navbar>
 
 <ion-content>
+  <ion-list>
+    <ion-list-header>
+      Artist Details
+    </ion-list-header>
 
+    <!-- NAME -->
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" placeholder="Artist Name" [(ngModel)]="room.name"></ion-input>
+    </ion-item>
+    <!-- /NAME -->
+
+    <!-- IMAGE -->
+    <ion-item>
+      <ion-label stacked>Image</ion-label>
+    </ion-item>
+    <!-- /IMAGE -->
+
+    <!-- SET LENGTH -->
+    <ion-item>
+      <ion-label stacked>Set Length</ion-label>
+    </ion-item>
+    <!-- /SET LENGTH -->
+
+    <!-- SPOTIFY BUTTON -->
+    <div padding>
+      <button block outline light>
+        <img src="img/logos/spotify-green.png" />
+      </button>
+    </div>
+    <!-- /SPOTIFY BUTTON -->
+  </ion-list>
 
   <div padding>
     <button outline block>Preview</button>
