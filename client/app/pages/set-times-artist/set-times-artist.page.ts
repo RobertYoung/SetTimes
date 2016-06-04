@@ -3,41 +3,28 @@ import {Page, NavController, NavParams} from 'ionic-angular';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
-import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
+import {Artist} from './../../models/Artist';
 import * as moment from 'moment';
 
 @Page({
-  templateUrl: 'build/pages/set-times-room/set-times-room.page.html'
+  templateUrl: 'build/pages/set-times-artist/set-times-artist.page.html'
 })
 
-export class SetTimesRoomPage implements OnInit {
+export class SetTimesArtistPage implements OnInit {
   event: Event;
   setTimes: SetTimes;
   room: Room;
+  artist: Artist;
 
   constructor(private nav: NavController, navParams: NavParams) {
     this.event = navParams.data.event;
     this.setTimes = navParams.data.setTimes || new SetTimes();
     this.room = navParams.data.room || new Room();
+    this.artist = navParams.data.artist || new Artist();
   }
 
   ngOnInit() {
-    this.setupDefaultValues();
+
   }
 
-  setupDefaultValues() {
-    if (!this.room.startTime) {
-      this.room.startTime = moment().format();
-    }
-
-    console.log(this.room.startTime);
-  }
-
-  goToAddArtistPage() {
-    this.nav.push(SetTimesArtistPage, {
-      event: this.event,
-      setTimes: this.setTimes,
-      room: this.room
-    });
-  }
 }

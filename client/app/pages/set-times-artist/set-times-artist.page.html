@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{artist.name ? artist.name : 'Artist'}}</ion-title>
+</ion-navbar>
+
+<ion-content>
+
+
+  <div padding>
+    <button outline block>Preview</button>
+    <button outline block>Save</button>
+    <button block>Submit</button>
+  </div>
+</ion-content>

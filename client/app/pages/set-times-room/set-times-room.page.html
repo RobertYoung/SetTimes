@@ -2,7 +2,7 @@
   <button menuToggle *ngIf="!selectedItem">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Add Room</ion-title>
+  <ion-title>{{room.name ? room.name : 'Room'}}</ion-title>
 </ion-navbar>
 
 <ion-content>
@@ -13,8 +13,8 @@
 
     <!-- NAME -->
     <ion-item>
-      <ion-label stacked>Name</ion-label>
-      <ion-input type="text" placeholder="Main Room / Stage"></ion-input>
+      <ion-label stacked>Name {{room.name}}</ion-label>
+      <ion-input type="text" placeholder="Main Room / Stage" [(ngModel)]="room.name"></ion-input>
     </ion-item>
     <!-- /NAME -->
 
@@ -30,7 +30,7 @@
     <ion-list-header>
       Artists
     </ion-list-header>
-    <a class="item" ion-item>
+    <a class="item" ion-item (click)="goToAddArtistPage()">
       <ion-label>
         Add an artist
       </ion-label>
