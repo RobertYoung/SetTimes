@@ -93,6 +93,7 @@ export class EventListPage {
       name: "Parklife",
       imageUrl: "img/event1.jpg",
       venue: "Heaton Park",
+      startTime: new Date(),
       setTimes: [setTimes1]
     });
 

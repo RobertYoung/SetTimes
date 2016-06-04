@@ -11,7 +11,7 @@
       <ion-list-header>
         Rooms
       </ion-list-header>
-      <a class="item" ion-item>
+      <a class="item" ion-item (click)="goToSetTimesInsertRoom()">
         <ion-label>
           Add a new room
         </ion-label>
@@ -24,13 +24,14 @@
         Other Information
       </ion-list-header>
       <ion-item>
-        <ion-label floating>Description</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label stacked>Description</ion-label>
+        <ion-input type="text" placeholder="Any other details"></ion-input>
       </ion-item>
     </ion-list>
 
     <div padding>
       <button outline block>Preview</button>
+      <button outline block>Save</button>
       <button block>Submit</button>
     </div>
 

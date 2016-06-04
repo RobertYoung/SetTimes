@@ -1,0 +1,48 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Add Room</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Room Details
+    </ion-list-header>
+
+    <!-- NAME -->
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" placeholder="Main Room / Stage"></ion-input>
+    </ion-item>
+    <!-- /NAME -->
+
+    <!-- START TIME -->
+    <ion-item>
+      <ion-label stacked>Start Time</ion-label>
+       <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="room.startTime"></ion-datetime>
+      <!-- <ion-datetime displayFormat="MM/YYYY" pickerFormat="D MMM YYYY HH:mm" [(ngModel)]="room.startTime"></ion-datetime> -->
+      <!-- <ion-datetime pickerFormat="DDD D MM HH:mm" displayFormat="DDDD D MMMM at HH:mm" placeholder="01/01/2015"></ion-datetime> -->
+    </ion-item>
+    <!-- /START TIME -->
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Artists
+    </ion-list-header>
+    <a class="item" ion-item>
+      <ion-label>
+        Add an artist
+      </ion-label>
+      <ion-button-effect></ion-button-effect>
+    </a>
+  </ion-list>
+
+  <div padding>
+    <button outline block>Preview</button>
+    <button outline block>Save</button>
+    <button block>Submit</button>
+  </div>
+</ion-content>

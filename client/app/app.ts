@@ -29,7 +29,7 @@ class MyApp {
 
   // make HelloIonicPage the root (or first) page
   // rootPage: any = HelloIonicPage;
-  rootPage: any = LoginPage;
+  rootPage: any = LoginPage; //EventListPage
   pages: Array<{title: string, component: any}>;
 
   constructor(
