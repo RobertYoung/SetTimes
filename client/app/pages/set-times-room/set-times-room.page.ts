@@ -17,6 +17,8 @@ export class SetTimesRoomPage implements OnInit {
     this.event = navParams.data.event;
     this.setTimes = navParams.data.setTimes || new SetTimes();
     this.room = navParams.data.room || new Room();
+
+    //this.setupDefaultValues();
   }
 
   ngOnInit() {
@@ -25,7 +27,11 @@ export class SetTimesRoomPage implements OnInit {
 
   setupDefaultValues() {
     if (!this.room.startTime) {
-      this.room.startTime = this.event.startTime;
+      //this.room.startTime = this.event.startTime;
+      this.room.startTime = moment().format();
+      // this.room.startTime = '1991-10-10';
     }
+
+    console.log(this.room.startTime);
   }
 }
