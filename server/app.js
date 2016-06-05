@@ -4,6 +4,9 @@ var app = express();
 var jwt = require('express-jwt');
 var dotenv = require('dotenv');
 var https = require('https');
+var spotifyAPI = require('./api/spotify.api');
+
+spotifyAPI.test();
 
 // app.use('/', jwtCheck);
 
@@ -22,14 +25,16 @@ var jwtCheck = jwt({
 var apiProxy = httpProxy.createProxyServer();
 
 // End points
-app.get("/search/artist", function(req, res, next){
+app.get("/artist", function(req, res, next){
   var q = req.query.q;
 
   var request = https.get(`https://api.spotify.com/v1/search?q=${q}&type=artist`, function (response) {
-    var body = ""
+    var body = "";
+
     response.on('data', function(data) {
       body += data;
     });
+
     response.on('end', function() {
       res.send(JSON.parse(body));
     });

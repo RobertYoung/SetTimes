@@ -6,5 +6,10 @@
 </ion-navbar>
 
 <ion-content>
-  Search
+  <ion-searchbar [(ngModel)]="searchQuery" (input)="searchArtist($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="#artist of listOfArtists">
+      {{ artist }}
+    </ion-item>
+  </ion-list>
 </ion-content>

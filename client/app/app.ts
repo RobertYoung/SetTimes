@@ -5,6 +5,7 @@ import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {LoginPage} from './pages/login/login.page';
 import {AuthService} from './services/auth/auth.service';
+import {SetTimesService} from './services/set-times/set-times.service';
 import {EventListPage} from './pages/event-list/event-list.page';
 import {SearchService} from './services/helpers/search.service';
 import {ArtistCard} from './components/artist-card/artist-card.component';
@@ -20,7 +21,8 @@ import {ArtistCard} from './components/artist-card/artist-card.component';
       deps: [Http]
     }),
     AuthService,
-    SearchService
+    SearchService,
+    SetTimesService
   ],
   directives: [ArtistCard]
 })
