@@ -9,7 +9,7 @@ import {SetTimesService} from './../../services/set-times/set-times.service';
 export class SetTimesArtistSearchPage implements OnInit {
 
   searchQuery: string;
-  listOfArtists: Array<string>;
+  listOfArtists: any;
   errorMessage: string;
 
   constructor(private nav: NavController, navParams: NavParams, public setTimesService: SetTimesService) {
@@ -38,7 +38,10 @@ export class SetTimesArtistSearchPage implements OnInit {
 
     this.setTimesService.searchArtist(q)
               .subscribe(
-                       artists => this.listOfArtists = artists,
+                       artists => {
+                         this.listOfArtists = artists.items
+                         console.log(this.listOfArtists);
+                       },
                        error =>  this.errorMessage = <any>error);
   }
 }

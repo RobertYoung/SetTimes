@@ -10,7 +10,7 @@ export class SetTimesService {
 
   private url = AppVariables.SET_TIMES_SERVICE_DOMAIN;  // URL to web API
 
-  searchArtist (query: string): Observable<string[]> {
+  searchArtist (query: string): Observable<any> {
     return this.http.get(`http://${this.url}/artist?q=${query}`)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -19,7 +19,8 @@ export class SetTimesService {
   private extractData(res: Response) {
     let body = res.json();
     console.log(body);
-    return body.data || { };
+    return body.artists || { };
+    // return body.artists;
   }
 
   private handleError (error: any) {
