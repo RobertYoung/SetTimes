@@ -1,5 +1,5 @@
 <ion-card>
-  <img src="{{artist.imageUrl}}"/>
+  <img src="{{artist.images?.length ? artist.images[0].url : ''}}"/>
   <ion-card-content>
     <ion-card-title>
       {{artist.name}}

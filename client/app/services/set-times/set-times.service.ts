@@ -2,6 +2,7 @@ import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import { AppVariables } from '../../app.variables';
+import { SpotifyArtistSearchResponse, Item } from '../../models/responses/SpotifyArtistSearchResponse';
 
 @Injectable()
 export class SetTimesService {
@@ -10,13 +11,13 @@ export class SetTimesService {
 
   private url = AppVariables.SET_TIMES_SERVICE_DOMAIN;  // URL to web API
 
-  searchArtist (query: string): Observable<any> {
+  searchArtist (query: string): Observable<Item> {
     return this.http.get(`http://${this.url}/artist?q=${query}`)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
 
-  private extractData(res: Response) {
+  private extractData(res: Response) : Item {
     let body = res.json();
     console.log(body);
     return body.artists || { };

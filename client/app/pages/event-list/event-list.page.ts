@@ -23,7 +23,7 @@ export class EventListPage {
     setTimes1.rooms = [<Room>
       {
         name: "Paradise",
-        startTime: new Date(),
+        startTime: "",
         artists: [
           {
             name: "Jamie Jones",
@@ -60,7 +60,7 @@ export class EventListPage {
       <Room>
         {
           name: "Elrow",
-          startTime: new Date(),
+          startTime: "",
           artists: [
             {
               name: "Eats Everything",

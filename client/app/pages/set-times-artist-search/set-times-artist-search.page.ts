@@ -1,6 +1,9 @@
 import {OnInit} from '@angular/core';
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {SetTimesService} from './../../services/set-times/set-times.service';
+import {SpotifyArtist} from '../../models/SpotifyArtist';
+
+// import * as automapper from 'automapper-ts';
 
 @Page({
   templateUrl: 'build/pages/set-times-artist-search/set-times-artist-search.page.html'
@@ -9,11 +12,20 @@ import {SetTimesService} from './../../services/set-times/set-times.service';
 export class SetTimesArtistSearchPage implements OnInit {
 
   searchQuery: string;
-  listOfArtists: any;
+  listOfArtists: Array<SpotifyArtist>;
   errorMessage: string;
 
   constructor(private nav: NavController, navParams: NavParams, public setTimesService: SetTimesService) {
-
+    // var objA = { prop1: 'From A', prop2: 'From A too', prop3: 'Also from A (really)' };
+    //
+    // automapper
+    //     .createMap('sourceType', 'destinationType')
+    //     .forMember('prop1', function (opts) { opts.mapFrom('prop2'); })
+    //     .forMember('prop2', function (opts) { opts.ignore(); })
+    //     .forSourceMember('prop3', function (opts) { opts.ignore(); })
+    //     .forMember('prop4', function () { return 12; })
+    //
+    // var objB = automapper.map('sourceType', 'destinationType', objA);
   }
 
   ngOnInit() {
@@ -40,7 +52,6 @@ export class SetTimesArtistSearchPage implements OnInit {
               .subscribe(
                        artists => {
                          this.listOfArtists = artists.items
-                         console.log(this.listOfArtists);
                        },
                        error =>  this.errorMessage = <any>error);
   }

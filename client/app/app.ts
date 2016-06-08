@@ -9,6 +9,7 @@ import {SetTimesService} from './services/set-times/set-times.service';
 import {EventListPage} from './pages/event-list/event-list.page';
 import {SearchService} from './services/helpers/search.service';
 import {ArtistCard} from './components/artist-card/artist-card.component';
+import * as automapper from 'automapper-ts';
 
 @App({
   templateUrl: 'build/app.html',
@@ -68,5 +69,9 @@ class MyApp {
     this.auth.logout();
     this.menu.close();
     this.nav.setRoot(LoginPage);
+  }
+
+  mapper() {
+    
   }
 }
