@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Artist} from '../../models/Artist';
+import {InAppBrowser} from 'ionic-native';
 
 @Component({
   selector: 'artist-card',
@@ -11,5 +12,9 @@ export class ArtistCard implements OnInit {
   constructor() {}
 
   ngOnInit() {
+  }
+
+  goToSpotifyPage(url: string) {
+    window.open(url, '_system');
   }
 }
