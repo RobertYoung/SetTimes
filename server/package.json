@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.0.0-rc.6",
     "dotenv": "^2.0.0",
-    "http-proxy": "^1.13.3"
+    "http-proxy": "^1.13.3",
+    "request": "^2.72.0"
   }
 }

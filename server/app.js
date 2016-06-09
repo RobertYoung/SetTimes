@@ -1,19 +1,16 @@
-var express = require('express');
-var httpProxy = require('http-proxy');
-var app = express();
-var jwt = require('express-jwt');
-var dotenv = require('dotenv');
-var https = require('https');
-var spotifyAPI = require('./api/spotify.api');
+const express = require('express');
+const httpProxy = require('http-proxy');
+const async = require('async');
+const request = require('request');
+const app = express();
+const jwt = require('express-jwt');
+const dotenv = require('dotenv');
+const https = require('https');
+const spotifyAPI = require('./api/spotify.api');
 
 spotifyAPI.test();
 
-// app.use('/', jwtCheck);
-
-// app.use('/search/artist',)
-
-// Load the .env variables
-dotenv.load();
+loadEnvironmentVariables();
 
 // Add authorization to the endpoints
 var jwtCheck = jwt({
@@ -32,37 +29,69 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 
-app.use(allowCrossDomain);
+///////////////
+// ENDPOINTS //
+///////////////
+function httpGet(url, callback) {
+  const options = {
+    url :  url,
+    json : true
+  };
+  request(options,
+    function(err, res, body) {
+      callback(err, body);
+    }
+  );
+}
 
-// End points
 app.get("/artist", function(req, res, next){
   var q = req.query.q;
+  var urls = [];
+  urls.push(`https://api.spotify.com/v1/search?q=${q}&type=artist`);
+  urls.push(`${process.env.SOUNDCLOUD_API_URL}/users?client_id=${process.env.SOUNDCLOUD_CLIENT_ID}&q=${q}`);
 
-  var request = https.get(`https://api.spotify.com/v1/search?q=${q}&type=artist`, function (response) {
-    var body = "";
-
-    response.on('data', function(data) {
-      body += data;
-    });
-
-    response.on('end', function() {
-      res.send(JSON.parse(body));
-    });
+  async.map(urls, httpGet, function (err, response){
+    if (err) return console.log(err);
+    console.log(res);
+    res.send(response);
   });
-
-  request.on('error', function(e) {
-    console.log('Problem with request: ' + e.message);
-  });
-
-  request.end();
 });
+
+app.get('/test', () => {
+  SC.get('/users?q=hannah', function(err, track) {
+  if ( err ) {
+    throw err;
+  } else {
+    console.log('track retrieved:', track);
+  }
+});
+})
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+////////////
+// SERVER //
+////////////
+function startServer() {
+  app.use('/', jwtCheck);
+  app.use(allowCrossDomain);
+  app.listen(3000, function () {
+    console.log('Example app listening on port 3000!');
+  });
+}
+
+function loadEnvironmentVariables() {
+  dotenv.load();
+}
+
+////////////////
+// SOUNDCLOUD //
+////////////////
+
+
+
+startServer();
 
 module.exports = app;
