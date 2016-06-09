@@ -1,4 +1,8 @@
 {
   "name": "client",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [{
+5     "path": "",
+6     "proxyUrl": "http://localhost:3000/"
+7   }]
 }

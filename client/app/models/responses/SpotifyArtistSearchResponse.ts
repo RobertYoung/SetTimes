@@ -1,15 +1,7 @@
-import { SpotifyArtist } from '../SpotifyArtist';
-
-export interface Item {
-  href: string;
-  items: SpotifyArtist[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous?: any;
-  total: number;
-}
+import { SpotifyArtist, IItem } from '../SpotifyArtist';
+import {SoundcloudArtist} from '../SoundcloudArtist';
 
 export interface SpotifyArtistSearchResponse {
-  artists: Item;
+  spotify: IItem;
+  soundcloud: Array<SoundcloudArtist>;
 }

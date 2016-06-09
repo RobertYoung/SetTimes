@@ -26,6 +26,16 @@ export interface ISpotifyArtist {
   uri: string;
 }
 
+export interface IItem {
+  href: string;
+  items: SpotifyArtist[];
+  limit: number;
+  next: string;
+  offset: number;
+  previous?: any;
+  total: number;
+}
+
 export class ExternalUrls implements IExternalUrls {
   spotify: string;
 }

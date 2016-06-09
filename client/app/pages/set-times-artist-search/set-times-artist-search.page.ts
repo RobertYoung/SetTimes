@@ -4,6 +4,7 @@ import {SetTimesAPIService} from './../../providers/set-times/set-times.api.serv
 import {SpotifyArtist} from '../../models/SpotifyArtist';
 import {Artist} from '../../models/Artist';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
+import * as automapper from 'automapper-ts';
 
 // import * as automapper from 'automapper-ts';
 
@@ -43,8 +44,22 @@ export class SetTimesArtistSearchPage implements OnInit {
 
     this.setTimesService.searchArtist(q)
               .subscribe(
-                       artists => {
-                         this.listOfArtists = artists.items
+                       data => {
+                        let spotify = <Array<Artist>>data.spotify.items.map((spotify) => {
+                          const imageUrl = spotify.images.length ? spotify.images[0].url : '';
+                          const artist = <Artist>spotify;
+                          artist.imageUrl = imageUrl;
+                          // return automapper.map("SpotifyArtist", "Artist", spotify);
+                          return spotify;
+                        });
+                        let soundcloud = <Array<Artist>>data.soundcloud.map((soundcloud) => {
+                          return automapper.map("SoundcloudArtist", "Artist", soundcloud)
+                        });
+
+                        console.log(spotify);
+                        console.log(soundcloud);
+
+                        this.listOfArtists = spotify.concat(soundcloud);
                        },
                        error =>  this.errorMessage = <any>error);
   }
