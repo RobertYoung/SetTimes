@@ -4,10 +4,11 @@ import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {LoginPage} from './pages/login/login.page';
-import {AuthService} from './services/auth/auth.service';
-import {SetTimesService} from './services/set-times/set-times.service';
+import {AuthService} from './providers/auth/auth.service';
+import {SetTimesDataService} from './providers/set-times/set-times.data.service';
+import {SetTimesAPIService} from './providers/set-times/set-times.api.service';
 import {EventListPage} from './pages/event-list/event-list.page';
-import {SearchService} from './services/helpers/search.service';
+import {SearchService} from './providers/helpers/search.service';
 import {ArtistCard} from './components/artist-card/artist-card.component';
 import * as automapper from 'automapper-ts';
 
@@ -23,7 +24,8 @@ import * as automapper from 'automapper-ts';
     }),
     AuthService,
     SearchService,
-    SetTimesService
+    SetTimesDataService,
+    SetTimesAPIService
   ],
   directives: [ArtistCard]
 })
@@ -72,6 +74,6 @@ class MyApp {
   }
 
   mapper() {
-    
+
   }
 }

@@ -2,7 +2,7 @@
   <button menuToggle *ngIf="!selectedItem">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>{{room.name ? room.name : 'Room'}}</ion-title>
+  <ion-title>{{data.room.name ? data.room.name : 'Room'}}</ion-title>
 </ion-navbar>
 
 <ion-content>
@@ -14,14 +14,14 @@
     <!-- NAME -->
     <ion-item>
       <ion-label stacked>Name</ion-label>
-      <ion-input type="text" placeholder="Main Room / Stage" [(ngModel)]="room.name"></ion-input>
+      <ion-input type="text" placeholder="Main Room / Stage" [(ngModel)]="data.room.name"></ion-input>
     </ion-item>
     <!-- /NAME -->
 
     <!-- START TIME -->
     <ion-item>
       <ion-label stacked>Start Time</ion-label>
-      <ion-datetime displayFormat="DDD D MMM HH:mm" pickerFormat="DDD D MMM YYYY HH:mm" [(ngModel)]="room.startTime"></ion-datetime>
+      <ion-datetime displayFormat="DDD D MMM HH:mm" pickerFormat="DDD D MMM YYYY HH:mm" [(ngModel)]="data.room.startTime"></ion-datetime>
     </ion-item>
     <!-- /START TIME -->
   </ion-list>

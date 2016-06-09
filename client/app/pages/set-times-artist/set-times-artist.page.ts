@@ -5,22 +5,23 @@ import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
 import {Artist} from './../../models/Artist';
 import {SetTimesArtistSearchPage} from '../set-times-artist-search/set-times-artist-search.page';
+import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 @Page({
   templateUrl: 'build/pages/set-times-artist/set-times-artist.page.html'
 })
 
 export class SetTimesArtistPage implements OnInit {
-  event: Event;
-  setTimes: SetTimes;
-  room: Room;
-  artist: Artist;
+  // event: Event;
+  // setTimes: SetTimes;
+  // room: Room;
+  // artist: Artist;
 
-  constructor(private nav: NavController, navParams: NavParams) {
-    this.event = navParams.data.event;
-    this.setTimes = navParams.data.setTimes || new SetTimes();
-    this.room = navParams.data.room || new Room();
-    this.artist = navParams.data.artist || new Artist();
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
+    // this.event = navParams.data.event;
+    // this.setTimes = navParams.data.setTimes || new SetTimes();
+    // this.room = navParams.data.room || new Room();
+    // this.artist = navParams.data.artist || new Artist();
   }
 
   ngOnInit() {
@@ -29,5 +30,8 @@ export class SetTimesArtistPage implements OnInit {
 
   goToArtistSearchPage() {
     this.nav.push(SetTimesArtistSearchPage);
+    // this.nav.push(SetTimesArtistSearchPage, {
+    //   artist: this.artist
+    // });
   }
 }

@@ -9,7 +9,7 @@
   <ion-searchbar [(ngModel)]="searchQuery" (input)="searchArtist($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let artist of listOfArtists">
-      <artist-card [artist]="artist"></artist-card>
+      <artist-card [artist]="artist" (artistselected)="artistSelected($event)"></artist-card>
     </ion-item>
   </ion-list>
 </ion-content>

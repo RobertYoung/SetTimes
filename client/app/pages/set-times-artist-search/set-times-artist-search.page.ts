@@ -1,7 +1,9 @@
 import {OnInit} from '@angular/core';
-import {Page, NavController, NavParams} from 'ionic-angular';
-import {SetTimesService} from './../../services/set-times/set-times.service';
+import {Page, NavController, NavParams, ViewController} from 'ionic-angular';
+import {SetTimesAPIService} from './../../providers/set-times/set-times.api.service';
 import {SpotifyArtist} from '../../models/SpotifyArtist';
+import {Artist} from '../../models/Artist';
+import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 // import * as automapper from 'automapper-ts';
 
@@ -10,22 +12,13 @@ import {SpotifyArtist} from '../../models/SpotifyArtist';
 })
 
 export class SetTimesArtistSearchPage implements OnInit {
-
   searchQuery: string;
   listOfArtists: Array<SpotifyArtist>;
   errorMessage: string;
+  // artist: Artist;
 
-  constructor(private nav: NavController, navParams: NavParams, public setTimesService: SetTimesService) {
-    // var objA = { prop1: 'From A', prop2: 'From A too', prop3: 'Also from A (really)' };
-    //
-    // automapper
-    //     .createMap('sourceType', 'destinationType')
-    //     .forMember('prop1', function (opts) { opts.mapFrom('prop2'); })
-    //     .forMember('prop2', function (opts) { opts.ignore(); })
-    //     .forSourceMember('prop3', function (opts) { opts.ignore(); })
-    //     .forMember('prop4', function () { return 12; })
-    //
-    // var objB = automapper.map('sourceType', 'destinationType', objA);
+  constructor(private nav: NavController, navParams: NavParams, public setTimesService: SetTimesAPIService, public data: SetTimesDataService, public view: ViewController) {
+    // this.artist = navParams.data.artist || new Artist();
   }
 
   ngOnInit() {
@@ -54,5 +47,14 @@ export class SetTimesArtistSearchPage implements OnInit {
                          this.listOfArtists = artists.items
                        },
                        error =>  this.errorMessage = <any>error);
+  }
+
+  artistSelected(artist) {
+    console.log("ARTIST SELCTED");
+    // this.view.artist = artist;
+    this.data.artist = artist;
+    let test = this.nav.getPrevious(this.view)
+    test.data.test = 1;
+    this.nav.popTo(test);
   }
 }

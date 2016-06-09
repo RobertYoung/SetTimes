@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Artist} from '../../models/Artist';
 import {InAppBrowser} from 'ionic-native';
 
@@ -8,6 +8,7 @@ import {InAppBrowser} from 'ionic-native';
 })
 export class ArtistCard implements OnInit {
   @Input() artist: Artist;
+  @Output() artistselected: EventEmitter<Artist> = new EventEmitter<Artist>();
 
   constructor() {}
 
@@ -16,5 +17,9 @@ export class ArtistCard implements OnInit {
 
   goToSpotifyPage(url: string) {
     window.open(url, '_system');
+  }
+
+  artistPressed(artist: Artist) {
+    this.artistselected.next(artist);
   }
 }

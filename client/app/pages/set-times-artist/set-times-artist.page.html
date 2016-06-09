@@ -2,7 +2,7 @@
   <button menuToggle *ngIf="!selectedItem">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>{{artist.name ? artist.name : 'Artist'}}</ion-title>
+  <ion-title>{{data.artist.name ? data.artist.name : 'Artist'}}</ion-title>
 </ion-navbar>
 
 <ion-content>
@@ -14,7 +14,7 @@
     <!-- NAME -->
     <ion-item>
       <ion-label stacked>Name</ion-label>
-      <ion-input type="text" placeholder="Artist Name" [(ngModel)]="room.name"></ion-input>
+      <ion-input type="text" placeholder="Artist Name" [(ngModel)]="data.artist.name"></ion-input>
     </ion-item>
     <!-- /NAME -->
 

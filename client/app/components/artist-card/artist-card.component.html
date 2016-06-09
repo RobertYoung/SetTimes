@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card (click)="artistPressed(artist)">
   <img src="{{artist.images?.length ? artist.images[0].url : ''}}"/>
   <ion-card-content>
     <ion-card-title>

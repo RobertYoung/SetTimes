@@ -5,7 +5,7 @@ import { AppVariables } from '../../app.variables';
 import { SpotifyArtistSearchResponse, Item } from '../../models/responses/SpotifyArtistSearchResponse';
 
 @Injectable()
-export class SetTimesService {
+export class SetTimesAPIService {
 
   constructor (private http: Http) {}
 

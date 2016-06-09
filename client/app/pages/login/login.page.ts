@@ -1,5 +1,5 @@
 import {Page, NavController} from 'ionic-angular';
-import {AuthService} from '../../services/auth/auth.service';
+import {AuthService} from '../../providers/auth/auth.service';
 import {EventListPage} from '../event-list/event-list.page';
 
 @Page({
