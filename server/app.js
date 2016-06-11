@@ -49,7 +49,7 @@ app.get("/artist", function(req, res, next){
       spotify: response[0].artists,
       soundcloud: response[1].map((soundcloud) => {
         if (soundcloud.avatar_url) {
-          soundcloud.avatar_url = soundcloud.avatar_url.replace("large", "t500x500");
+          soundcloud.avatar_url = soundcloud.avatar_url.replace("large", "t300x300");
         }
         return soundcloud;
       })

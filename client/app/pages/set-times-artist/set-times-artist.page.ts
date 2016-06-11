@@ -12,26 +12,45 @@ import {SetTimesDataService} from '../../providers/set-times/set-times.data.serv
 })
 
 export class SetTimesArtistPage implements OnInit {
-  // event: Event;
-  // setTimes: SetTimes;
-  // room: Room;
-  // artist: Artist;
 
-  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
-    // this.event = navParams.data.event;
-    // this.setTimes = navParams.data.setTimes || new SetTimes();
-    // this.room = navParams.data.room || new Room();
-    // this.artist = navParams.data.artist || new Artist();
-  }
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) { }
 
   ngOnInit() {
 
   }
 
+  ////////////////
+  // Navigation //
+  ////////////////
   goToArtistSearchPage() {
     this.nav.push(SetTimesArtistSearchPage);
-    // this.nav.push(SetTimesArtistSearchPage, {
-    //   artist: this.artist
-    // });
+  }
+
+  goToRoomPage() {
+    this.nav.pop();
+  }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
+  saveButtonPressed() {
+    console.log("Save button pressed");
+    this.addArtistToRoom()
+    this.goToRoomPage();
+  }
+
+  submitButtonPressed() {
+    console.log("Submit button pressed");
+  }
+
+  previewButtonPressed() {
+    console.log("Preview button pressed");
+  }
+
+  ////////////////////
+  // Artist Methods //
+  ////////////////////
+  addArtistToRoom() {
+    this.data.addArtistToRoom();
   }
 }

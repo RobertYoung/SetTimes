@@ -5,6 +5,10 @@ import {SetTimes} from '../../models/SetTimes';
 import {Room} from '../../models/Room';
 import {Artist} from '../../models/Artist';
 
+export interface ISetTimesDataService {
+  addArtistToRoom() : void;
+}
+
 @Injectable()
 export class SetTimesDataService {
   event: Event = new Event();
@@ -14,4 +18,8 @@ export class SetTimesDataService {
   points: number = 200;
 
   constructor() {}
+
+  addArtistToRoom() {
+    this.room.artists.push(this.artist);
+  }
 }

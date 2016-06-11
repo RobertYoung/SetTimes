@@ -19,16 +19,22 @@
     <!-- /NAME -->
 
     <!-- IMAGE -->
-    <ion-item>
-      <ion-label stacked>Image</ion-label>
-    </ion-item>
+    <img padding src="{{data.artist.imageUrl}}"/>
     <!-- /IMAGE -->
 
-    <!-- SET LENGTH -->
+    <!-- START TIME -->
     <ion-item>
-      <ion-label stacked>Set Length</ion-label>
+      <ion-label stacked>Start Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="data.artist.startTime"></ion-datetime>
     </ion-item>
-    <!-- /SET LENGTH -->
+    <!-- /START TIME -->
+
+    <!-- END TIME -->
+    <ion-item>
+      <ion-label stacked>End Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="data.artist.endTime"></ion-datetime>
+    </ion-item>
+    <!-- /END TIME -->
 
     <!-- SPOTIFY BUTTON -->
     <div padding>
@@ -40,8 +46,8 @@
   </ion-list>
 
   <div padding>
-    <button outline block>Preview</button>
-    <button outline block>Save</button>
-    <button block>Submit</button>
+    <button outline block (click)="previewButtonPressed()">Preview</button>
+    <button outline block (click)="saveButtonPressed()">Save</button>
+    <button block (click)="submitButtonPressed()">Submit</button>
   </div>
 </ion-content>
