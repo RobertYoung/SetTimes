@@ -30,13 +30,13 @@
     <ion-list-header>
       Artists
     </ion-list-header>
-    <a class="item" ion-item (click)="goToAddArtistPage()" *ngFor="let artist of data.room.artists">
+    <a class="item" ion-item (click)="editArtistButtonPressed(artist)" *ngFor="let artist of data.room.artists">
       <ion-label>
         {{artist.name}}
       </ion-label>
       <ion-button-effect></ion-button-effect>
     </a>
-    <a class="item" ion-item (click)="goToAddArtistPage()">
+    <a class="item" ion-item (click)="addArtistButtonPressed()">
       <ion-label>
         Add an artist
       </ion-label>

@@ -2,6 +2,7 @@ import {OnInit} from '@angular/core';
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
+import {Artist} from './../../models/Artist';
 import {SetTimes} from './../../models/SetTimes';
 import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
@@ -35,12 +36,25 @@ export class SetTimesRoomPage implements OnInit {
     console.log(this.data.room.startTime);
   }
 
-  goToAddArtistPage() {
-    this.nav.push(SetTimesArtistPage);
-    // this.nav.push(SetTimesArtistPage, {
-    //   event: this.event,
-    //   setTimes: this.setTimes,
-    //   room: this.room
-    // });
+  ////////////////
+  // Navigation //
+  ////////////////
+  goToAddArtistPage(editMode?: boolean) {
+    this.nav.push(SetTimesArtistPage, {
+      editMode: editMode
+    });
+  }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
+  addArtistButtonPressed() {
+    this.data.resetArtist();
+    this.goToAddArtistPage();
+  }
+
+  editArtistButtonPressed(artist: Artist) {
+    this.data.setArtist(artist);
+    this.goToAddArtistPage(true);
   }
 }
