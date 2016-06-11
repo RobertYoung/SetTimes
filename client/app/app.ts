@@ -10,6 +10,7 @@ import {SetTimesAPIService} from './providers/set-times/set-times.api.service';
 import {EventListPage} from './pages/event-list/event-list.page';
 import {SearchService} from './providers/helpers/search.service';
 import {ArtistCard} from './components/artist-card/artist-card.component';
+import {SaveButtons} from './components/save-buttons/save-buttons.component';
 import * as automapper from 'automapper-ts';
 
 @App({
@@ -27,7 +28,7 @@ import * as automapper from 'automapper-ts';
     SetTimesDataService,
     SetTimesAPIService
   ],
-  directives: [ArtistCard]
+  directives: [ArtistCard, SaveButtons]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;

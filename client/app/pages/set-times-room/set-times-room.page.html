@@ -44,9 +44,5 @@
     </a>
   </ion-list>
 
-  <div padding>
-    <button outline block>Preview</button>
-    <button outline block>Save</button>
-    <button block>Submit</button>
-  </div>
+  <save-buttons (previewButton)="previewButtonPressed()" (saveButton)="saveButtonPressed()" (submitButton)="submitButtonPressed()"></save-buttons>
 </ion-content>

@@ -45,9 +45,5 @@
     <!-- /SPOTIFY BUTTON -->
   </ion-list>
 
-  <div padding>
-    <button outline block (click)="previewButtonPressed()">Preview</button>
-    <button outline block (click)="saveButtonPressed()">Save</button>
-    <button block (click)="submitButtonPressed()">Submit</button>
-  </div>
+  <save-buttons (previewButton)="previewButtonPressed()" (saveButton)="saveButtonPressed()" (submitButton)="submitButtonPressed()"></save-buttons>
 </ion-content>

@@ -57,4 +57,19 @@ export class SetTimesRoomPage implements OnInit {
     this.data.setArtist(artist);
     this.goToAddArtistPage(true);
   }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
+  saveButtonPressed() {
+    console.log("Save button pressed");
+  }
+
+  submitButtonPressed() {
+    console.log("Submit button pressed");
+  }
+
+  previewButtonPressed() {
+    console.log("Preview button pressed");
+  }
 }

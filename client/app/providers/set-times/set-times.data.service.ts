@@ -46,4 +46,11 @@ export class SetTimesDataService {
   addArtistToRoom() {
     this.room.artists.push(this.artist);
   }
+
+  //////////////////
+  // Room Methods //
+  //////////////////
+  addRoomToSetTimes() {
+    this.setTimes.rooms.push(this.room);
+  }
 }
