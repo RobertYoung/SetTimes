@@ -11,6 +11,12 @@
       <ion-list-header>
         Rooms
       </ion-list-header>
+      <a class="item" ion-item (click)="editArtistButtonPressed(artist)" *ngFor="let room of data.setTimes.rooms">
+        <ion-label>
+          {{room.name}}
+        </ion-label>
+        <ion-button-effect></ion-button-effect>
+      </a>
       <a class="item" ion-item (click)="goToSetTimesInsertRoom()">
         <ion-label>
           Add a new room
@@ -29,7 +35,7 @@
       </ion-item>
     </ion-list>
 
-    <save-buttons (previewButton)="previewButtonPressed()" (saveButton)="saveButtonPressed()" (submitButton)="submitButtonPressed()"></save-buttons>
+    <save-buttons (previewButton)="previewButtonPressed()" (saveButton)="saveButtonPressed()" (submitButton)="submitButtonPressed()" (deleteButton)="deleteButtonPressed()"></save-buttons>
 
   </scroll-content>
 

@@ -15,13 +15,28 @@ export interface ISetTimesDataService {
 
 @Injectable()
 export class SetTimesDataService {
-  event: Event = new Event();
-  setTimes: SetTimes = new SetTimes();
-  room: Room = new Room();
-  artist: Artist = new Artist();
-  points: number = 200;
+  event: Event;
+  setTimes: SetTimes;
+  room: Room;
+  artist: Artist;
+  points: number;
+  editMode: boolean;
 
-  constructor() {}
+  constructor() {
+    this.resetData();
+  }
+
+  //////////////////////
+  // All Data Methods //
+  //////////////////////
+  resetData() {
+    this.event = new Event();
+    this.setTimes = new SetTimes();
+    this.room = new Room();
+    this.artist = new Artist();
+    this.points = 200;
+    this.editMode = false;
+  }
 
   ////////////////////
   // Artist Methods //
@@ -52,5 +67,12 @@ export class SetTimesDataService {
   //////////////////
   addRoomToSetTimes() {
     this.setTimes.rooms.push(this.room);
+  }
+
+  ///////////////////////
+  // Set Times Methods //
+  ///////////////////////
+  addSetTimesToEvent() {
+    this.event.setTimes.push(this.setTimes);
   }
 }

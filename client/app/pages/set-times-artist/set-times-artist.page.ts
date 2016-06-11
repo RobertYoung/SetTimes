@@ -12,10 +12,9 @@ import {SetTimesDataService} from '../../providers/set-times/set-times.data.serv
 })
 
 export class SetTimesArtistPage implements OnInit {
-  editMode : boolean;
 
   constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
-    this.editMode = navParams.data.editMode;
+
   }
 
   ngOnInit() {
@@ -38,7 +37,7 @@ export class SetTimesArtistPage implements OnInit {
   ///////////////////
   saveButtonPressed() {
     console.log("Save button pressed");
-    if (this.editMode) {
+    if (this.data.editMode) {
       this.editArtistInRoom();
     }else{
       this.addArtistToRoom();
@@ -53,6 +52,10 @@ export class SetTimesArtistPage implements OnInit {
 
   previewButtonPressed() {
     console.log("Preview button pressed");
+  }
+
+  deleteButtonPressed() {
+    console.log("Delete button pressed");
   }
 
   ////////////////////

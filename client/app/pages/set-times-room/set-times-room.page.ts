@@ -13,15 +13,9 @@ import * as moment from 'moment';
 })
 
 export class SetTimesRoomPage implements OnInit {
-  // event: Event;
-  // setTimes: SetTimes;
-  // room: Room;
 
   constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
-    // this.event = navParams.data.event;
-    // this.setTimes = navParams.data.setTimes || new SetTimes();
-    // this.room = navParams.data.room || new Room();
-    console.log(this.data);
+
   }
 
   ngOnInit() {
@@ -45,6 +39,10 @@ export class SetTimesRoomPage implements OnInit {
     });
   }
 
+  goToSetTimesPage() {
+    this.nav.pop();
+  }
+
   ///////////////////
   // Button Events //
   ///////////////////
@@ -63,6 +61,14 @@ export class SetTimesRoomPage implements OnInit {
   ///////////////////
   saveButtonPressed() {
     console.log("Save button pressed");
+
+    if (this.data.editMode) {
+
+    }else{
+      this.data.addRoomToSetTimes();
+    }
+
+    this.goToSetTimesPage();
   }
 
   submitButtonPressed() {
@@ -71,5 +77,9 @@ export class SetTimesRoomPage implements OnInit {
 
   previewButtonPressed() {
     console.log("Preview button pressed");
+  }
+
+  deleteButtonPressed() {
+    console.log("Delete button pressed");
   }
 }

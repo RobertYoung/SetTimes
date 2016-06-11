@@ -5,18 +5,39 @@ import {SetTimes} from './../../models/SetTimes';
 import {SetTimesPage} from './../set-times/set-times.page';
 import {SetTimesInsertPage} from './../set-times-insert/set-times-insert.page';
 import {SearchService} from '../../providers/helpers/search.service';
+import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 @Page({
   templateUrl: 'build/pages/event-detail/event-detail.page.html'
 })
 
 export class EventDetailPage {
+  editMode: boolean;
   event: Event;
 
-  constructor(private nav: NavController, private navParams: NavParams, private search: SearchService) {
+  constructor(private nav: NavController, private navParams: NavParams, private search: SearchService, private data: SetTimesDataService) {
     this.event = navParams.data.event;
   }
 
+  ////////////////
+  // Navigation //
+  ////////////////
+  goToSetTimes(setTimes: SetTimes) {
+    this.nav.push(SetTimesPage, {
+      event: this.event,
+      setTimes: setTimes
+    });
+  }
+
+  goToInsertSetTimes() {
+    this.nav.push(SetTimesInsertPage, {
+      event: this.event
+    });
+  }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
   requestBountyButtonPressed() {
     let alert = Alert.create({
       title: 'Bounty Requested',
@@ -27,17 +48,16 @@ export class EventDetailPage {
     this.nav.present(alert);
   }
 
-  addSetTimes() {
-    this.nav.push(SetTimesInsertPage, {
-      event: this.event
-    });
+  addSetTimesButtonPressed() {
+    this.addSetTimes();
   }
 
-  goToSetTimes(setTimes: SetTimes) {
-    this.nav.push(SetTimesPage, {
-      event: this.event,
-      setTimes: setTimes
-    });
+  ////////////////////////////
+  // Set Times Modification //
+  ////////////////////////////
+  addSetTimes() {
+    this.data.resetData();
+    this.goToInsertSetTimes();
   }
 
   getTotalArtists(setTimes: SetTimes) : number {

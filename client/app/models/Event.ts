@@ -8,7 +8,7 @@ export class Event {
   public endTime: Date;
   public venue: string;
   public imageUrl: string;
-  public setTimes: Array<SetTimes>;
+  public setTimes: Array<SetTimes> = [];
 
   constructor() {}
 

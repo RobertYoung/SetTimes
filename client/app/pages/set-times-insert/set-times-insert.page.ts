@@ -9,20 +9,47 @@ import {SetTimesDataService} from '../../providers/set-times/set-times.data.serv
 })
 
 export class SetTimesInsertPage {
-  // event: Event;
-  // setTimes: SetTimes;
-  // points: number = 200;
-
 
   constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
     this.data.event = navParams.data.event;
+    this.data.editMode = navParams.data.editMode;
+    this.data.setTimes.createdBy.username = "TEST USER";
   }
 
+  ////////////////
+  // Navigation //
+  ////////////////
   goToSetTimesInsertRoom() {
     this.nav.push(SetTimesRoomPage);
-    // this.nav.push(SetTimesRoomPage, {
-    //   event: this.data.event,
-    //   setTimes: this.data.setTimes
-    // });
+  }
+
+  goToEventDetails() {
+    this.nav.pop();
+  }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
+  saveButtonPressed() {
+    console.log("Save button pressed");
+    if (this.data.editMode) {
+
+    }else{
+      this.data.addSetTimesToEvent();
+    }
+
+    this.goToEventDetails();
+  }
+
+  submitButtonPressed() {
+    console.log("Submit button pressed");
+  }
+
+  previewButtonPressed() {
+    console.log("Preview button pressed");
+  }
+
+  deleteButtonPressed() {
+    console.log("Delete button pressed");
   }
 }
