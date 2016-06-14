@@ -20,7 +20,6 @@ export class SetTimesDataService {
   room: Room;
   artist: Artist;
   points: number;
-  editMode: boolean;
 
   constructor() {
     this.resetData();
@@ -35,7 +34,6 @@ export class SetTimesDataService {
     this.room = new Room();
     this.artist = new Artist();
     this.points = 200;
-    this.editMode = false;
   }
 
   ////////////////////
@@ -67,6 +65,14 @@ export class SetTimesDataService {
   //////////////////
   addRoomToSetTimes() {
     this.setTimes.rooms.push(this.room);
+  }
+
+  setRoom(room: Room) {
+    this.room = room;
+  }
+
+  resetRoom() {
+    this.room = new Room();
   }
 
   ///////////////////////

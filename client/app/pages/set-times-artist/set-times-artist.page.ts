@@ -6,15 +6,19 @@ import {SetTimes} from './../../models/SetTimes';
 import {Artist} from './../../models/Artist';
 import {SetTimesArtistSearchPage} from '../set-times-artist-search/set-times-artist-search.page';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
+import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
+import {SetTimesInput} from './../common/set-times-input';
 
 @Page({
   templateUrl: 'build/pages/set-times-artist/set-times-artist.page.html'
 })
 
-export class SetTimesArtistPage implements OnInit {
+export class SetTimesArtistPage extends SetTimesInput implements OnInit {
 
-  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {
+    super();
 
+    this.editMode = navParams.data.editMode;
   }
 
   ngOnInit() {
@@ -37,7 +41,7 @@ export class SetTimesArtistPage implements OnInit {
   ///////////////////
   saveButtonPressed() {
     console.log("Save button pressed");
-    if (this.data.editMode) {
+    if (this.editMode) {
       this.editArtistInRoom();
     }else{
       this.addArtistToRoom();
@@ -52,6 +56,7 @@ export class SetTimesArtistPage implements OnInit {
 
   previewButtonPressed() {
     console.log("Preview button pressed");
+    this.setTimesNavigation.goToSetTimesPreview(this.data.event, this.data.setTimes);
   }
 
   deleteButtonPressed() {

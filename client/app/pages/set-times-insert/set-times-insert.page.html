@@ -11,13 +11,13 @@
       <ion-list-header>
         Rooms
       </ion-list-header>
-      <a class="item" ion-item (click)="editArtistButtonPressed(artist)" *ngFor="let room of data.setTimes.rooms">
+      <a class="item" ion-item (click)="editRoomButtonPressed(room)" *ngFor="let room of data.setTimes.rooms">
         <ion-label>
           {{room.name}}
         </ion-label>
         <ion-button-effect></ion-button-effect>
       </a>
-      <a class="item" ion-item (click)="goToSetTimesInsertRoom()">
+      <a class="item" ion-item (click)="insertRoomButtonPressed()">
         <ion-label>
           Add a new room
         </ion-label>

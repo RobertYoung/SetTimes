@@ -7,14 +7,19 @@ import {SetTimes} from './../../models/SetTimes';
 import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
+import {SetTimesInput} from './../common/set-times-input';
 import * as moment from 'moment';
 
 @Page({
   templateUrl: 'build/pages/set-times-room/set-times-room.page.html'
 })
-export class SetTimesRoomPage implements OnInit {
+export class SetTimesRoomPage extends SetTimesInput implements OnInit {
 
-  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {}
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {
+    super();
+
+    this.editMode = navParams.data.editMode;
+  }
 
   ngOnInit() {
     this.setupDefaultValues();
@@ -60,7 +65,7 @@ export class SetTimesRoomPage implements OnInit {
   saveButtonPressed() {
     console.log("Save button pressed");
 
-    if (this.data.editMode) {
+    if (this.editMode) {
 
     }else{
       this.data.addRoomToSetTimes();
