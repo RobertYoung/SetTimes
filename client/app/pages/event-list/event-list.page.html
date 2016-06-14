@@ -15,6 +15,8 @@
 </ion-toolbar>
 
 <ion-content class="card-background-page">
+  <ion-searchbar></ion-searchbar>
+
   <ion-card *ngFor="let event of eventList" (click)="eventPressed($event, event)">
     <img src="{{event.imageUrl}}"/>
     <div class="card-title">{{event.name}}</div>

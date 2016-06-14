@@ -51,7 +51,8 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Events', component: EventListPage },
-      { title: 'Artists', component: EventListPage }
+      { title: 'Artists', component: EventListPage },
+      { title: 'Leaderboard', component: EventListPage }
     ];
   }
 
