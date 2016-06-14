@@ -1,22 +1,20 @@
-import {OnInit} from '@angular/core';
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {OnInit} from '@angular/core';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {Artist} from './../../models/Artist';
 import {SetTimes} from './../../models/SetTimes';
 import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
+import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import * as moment from 'moment';
 
 @Page({
   templateUrl: 'build/pages/set-times-room/set-times-room.page.html'
 })
-
 export class SetTimesRoomPage implements OnInit {
 
-  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
-
-  }
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {}
 
   ngOnInit() {
     this.setupDefaultValues();
@@ -77,6 +75,7 @@ export class SetTimesRoomPage implements OnInit {
 
   previewButtonPressed() {
     console.log("Preview button pressed");
+    this.setTimesNavigation.goToSetTimesPreview(this.data.event, this.data.setTimes);
   }
 
   deleteButtonPressed() {

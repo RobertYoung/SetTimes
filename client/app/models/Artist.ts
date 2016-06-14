@@ -5,4 +5,5 @@ export class Artist extends SpotifyArtist {
   public startTime: Date;
   public endTime: Date;
   public imageUrl: string;
+  public setLength: number;
 }

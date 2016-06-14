@@ -11,6 +11,7 @@ import {EventListPage} from './pages/event-list/event-list.page';
 import {SearchService} from './providers/helpers/search.service';
 import {ArtistCard} from './components/artist-card/artist-card.component';
 import {SaveButtons} from './components/save-buttons/save-buttons.component';
+import {SetTimesNavigationService} from './providers/set-times/set-times.navigation.service';
 import * as automapper from 'automapper-ts';
 
 @App({
@@ -26,7 +27,8 @@ import * as automapper from 'automapper-ts';
     AuthService,
     SearchService,
     SetTimesDataService,
-    SetTimesAPIService
+    SetTimesAPIService,
+    SetTimesNavigationService
   ],
   directives: [ArtistCard, SaveButtons]
 })
