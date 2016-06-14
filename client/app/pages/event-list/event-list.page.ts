@@ -1,6 +1,7 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Event} from './../../models/Event';
 import {EventDetailPage} from '../event-detail/event-detail.page';
+import {EventInsertPage} from '../event-insert/event-insert.page';
 import {SetTimes} from '../../models/SetTimes';
 import {Room} from '../../models/Room';
 
@@ -116,9 +117,13 @@ export class EventListPage {
     });
   }
 
-  eventTapped($event, event: Event) {
+  eventPressed($event, event: Event) {
     this.nav.push(EventDetailPage, {
       event: event
     });
+  }
+
+  createEventButtonPressed() {
+    this.nav.push(EventInsertPage);
   }
 }

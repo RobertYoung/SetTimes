@@ -8,14 +8,14 @@
   <ion-title>Events</ion-title>
 
   <ion-buttons end>
-    <button royal>
-      <ion-icon name="add"></ion-icon>
+    <button royal (click)="createEventButtonPressed()">
+      <ion-icon name="add" ></ion-icon>
     </button>
   </ion-buttons>
 </ion-toolbar>
 
 <ion-content class="card-background-page">
-  <ion-card *ngFor="let event of eventList" (click)="eventTapped($event, event)">
+  <ion-card *ngFor="let event of eventList" (click)="eventPressed($event, event)">
     <img src="{{event.imageUrl}}"/>
     <div class="card-title">{{event.name}}</div>
     <div class="card-subtitle">{{event.venue}}</div>
