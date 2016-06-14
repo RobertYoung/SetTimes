@@ -1,4 +1,4 @@
-import {OnInit} from '@angular/core';
+import {OnInit, Component} from '@angular/core';
 import {Page, NavController, NavParams, ViewController} from 'ionic-angular';
 import {SetTimesAPIService} from './../../providers/set-times/set-times.api.service';
 import {SpotifyArtist} from '../../models/SpotifyArtist';
@@ -8,7 +8,7 @@ import * as automapper from 'automapper-ts';
 
 // import * as automapper from 'automapper-ts';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/set-times-artist-search/set-times-artist-search.page.html'
 })
 

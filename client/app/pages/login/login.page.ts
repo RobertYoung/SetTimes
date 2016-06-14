@@ -1,8 +1,9 @@
 import {Page, NavController} from 'ionic-angular';
+import {Component} from '@angular/core';
 import {AuthService} from '../../providers/auth/auth.service';
 import {EventListPage} from '../event-list/event-list.page';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/login/login.page.html'
 })
 export class LoginPage {

@@ -1,6 +1,6 @@
-import {ViewChild, Type, provide} from '@angular/core';
+import {ViewChild, Type, provide, Component} from '@angular/core';
 import {Http} from '@angular/http';
-import {App, Platform, MenuController, Nav} from 'ionic-angular';
+import {Platform, MenuController, Nav, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {LoginPage} from './pages/login/login.page';
@@ -14,25 +14,24 @@ import {SaveButtons} from './components/save-buttons/save-buttons.component';
 import {SetTimesNavigationService} from './providers/set-times/set-times.navigation.service';
 import * as automapper from 'automapper-ts';
 
-@App({
+@Component({
   templateUrl: 'build/app.html',
-  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [
-    provide(AuthHttp, {
-      useFactory: (http) => {
-        return new AuthHttp(new AuthConfig(), http);
-      },
-      deps: [Http]
-    }),
-    AuthService,
-    SearchService,
-    SetTimesDataService,
-    SetTimesAPIService,
-    SetTimesNavigationService
-  ],
+  // providers: [
+  //   provide(AuthHttp, {
+  //     useFactory: (http) => {
+  //       return new AuthHttp(new AuthConfig(), http);
+  //     },
+  //     deps: [Http]
+  //   }),
+  //   AuthService,
+  //   SearchService,
+  //   SetTimesDataService,
+  //   SetTimesAPIService,
+  //   SetTimesNavigationService
+  // ],
   directives: [ArtistCard, SaveButtons]
 })
-class MyApp {
+export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
@@ -102,3 +101,24 @@ class MyApp {
       // artist.images?.length ? artist.images[0].url : ''
   }
 }
+
+// Pass the main app component as the first argument
+// Pass any providers for your app in the second argument
+// Set any config for your app as the third argument:
+// http://ionicframework.com/docs/v2/api/config/Config/
+
+ionicBootstrap(MyApp, [
+  provide(AuthHttp, {
+    useFactory: (http) => {
+      return new AuthHttp(new AuthConfig(), http);
+    },
+    deps: [Http]
+  }),
+  AuthService,
+  SearchService,
+  SetTimesDataService,
+  SetTimesAPIService,
+  SetTimesNavigationService
+], {
+  tabbarPlacement: 'bottom'
+});

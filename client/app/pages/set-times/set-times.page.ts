@@ -1,9 +1,10 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {SetTimes} from './../../models/SetTimes';
 import {SearchService} from '../../providers/helpers/search.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/set-times/set-times.page.html'
 })
 

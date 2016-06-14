@@ -1,12 +1,12 @@
 {
-  "dependencies": {
-    "lodash": "registry:npm/lodash#4.0.0+20160416211519"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "ambientDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654"
   },
   "globalDependencies": {
-    "cordova": "registry:dt/cordova#0.0.0+20160510234918"
+    "cordova": "registry:dt/cordova#0.0.0+20160510234918",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "lodash": "registry:dt/lodash#3.10.0+20160330154726"
   }
 }

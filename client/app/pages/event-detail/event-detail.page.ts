@@ -1,4 +1,5 @@
 import {Page, NavController, NavParams, Alert} from 'ionic-angular';
+import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
@@ -7,7 +8,7 @@ import {SetTimesInsertPage} from './../set-times-insert/set-times-insert.page';
 import {SearchService} from '../../providers/helpers/search.service';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/event-detail/event-detail.page.html'
 })
 

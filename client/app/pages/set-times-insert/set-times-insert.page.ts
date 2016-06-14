@@ -1,4 +1,5 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {OnInit, Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {SetTimes} from './../../models/SetTimes';
 import {Room} from './../../models/Room';
@@ -7,7 +8,7 @@ import {SetTimesDataService} from '../../providers/set-times/set-times.data.serv
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html'
 })
 

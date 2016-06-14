@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
-import {OnInit} from '@angular/core';
+import {OnInit, Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {Artist} from './../../models/Artist';
@@ -10,7 +10,7 @@ import {SetTimesNavigationService} from '../../providers/set-times/set-times.nav
 import {SetTimesInput} from './../common/set-times-input';
 import * as moment from 'moment';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/set-times-room/set-times-room.page.html'
 })
 export class SetTimesRoomPage extends SetTimesInput implements OnInit {

@@ -1,5 +1,5 @@
 import {Injectable, ViewChild} from '@angular/core';
-import {NavController, IonicApp} from 'ionic-angular';
+import {NavController, App} from 'ionic-angular';
 import {SetTimesPage} from '../../pages/set-times/set-times.page';
 import {SetTimes} from '../../models/SetTimes';
 import {Event} from '../../models/Event';
@@ -8,7 +8,7 @@ import {Event} from '../../models/Event';
 export class SetTimesNavigationService {
   nav: NavController;
 
-  constructor (private app: IonicApp) {
+  constructor (private app: App) {
     this.nav = this.app.getActiveNav();
   }
 

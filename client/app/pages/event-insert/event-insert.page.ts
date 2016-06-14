@@ -1,7 +1,8 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/event-insert/event-insert.page.html'
 })
 
