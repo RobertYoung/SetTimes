@@ -10,7 +10,7 @@
     <div *ngFor="let room of setTimes.rooms">
       <ion-item-divider light>{{room.name}}</ion-item-divider>
 
-      <artist-card *ngFor="let artist of room.artists" [artist]="artist" [test]=1></artist-card>
+      <artist-card *ngFor="let artist of room.artists" [artist]="artist"></artist-card>
     </div>
   </ion-item-group>
 </ion-content>

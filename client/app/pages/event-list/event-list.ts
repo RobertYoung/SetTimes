@@ -1,16 +1,15 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
-import {EventDetailPage} from '../event-detail/event-detail.page';
-import {EventInsertPage} from '../event-insert/event-insert.page';
+import {EventDetailComponent} from '../event-detail/event-detail';
+import {EventInsertTypeComponent} from '../event-insert-type/event-insert-type';
 import {SetTimes} from '../../models/SetTimes';
 import {Room} from '../../models/Room';
 
 @Component({
-  templateUrl: 'build/pages/event-list/event-list.page.html'
+  templateUrl: 'build/pages/event-list/event-list.html'
 })
-
-export class EventListPage {
+export class EventListComponent {
   eventList: Array<Event>;
 
   constructor(private nav: NavController, navParams: NavParams) {
@@ -119,12 +118,12 @@ export class EventListPage {
   }
 
   eventPressed($event, event: Event) {
-    this.nav.push(EventDetailPage, {
+    this.nav.push(EventDetailComponent, {
       event: event
     });
   }
 
   createEventButtonPressed() {
-    this.nav.push(EventInsertPage);
+    this.nav.push(EventInsertTypeComponent);
   }
 }

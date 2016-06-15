@@ -1,21 +1,21 @@
-import {OnInit, Component} from '@angular/core';
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {OnInit, Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
-import {SetTimes} from './../../models/SetTimes';
 import {Artist} from './../../models/Artist';
-import {SetTimesArtistSearchPage} from '../set-times-artist-search/set-times-artist-search.page';
+import {SetTimes} from './../../models/SetTimes';
+import {SetTimesArtistComponent} from '../set-times-artist/set-times-artist';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
-import {SaveButtons} from '../../components/save-buttons/save-buttons.component';
+import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.component';
+import * as moment from 'moment';
 
 @Component({
-  templateUrl: 'build/pages/set-times-artist/set-times-artist.page.html',
-  directives: [SaveButtons]
+  templateUrl: 'build/pages/set-times-room/set-times-room.page.html',
+  directives: [SaveButtonsComponent]
 })
-
-export class SetTimesArtistPage extends SetTimesInput implements OnInit {
+export class SetTimesRoomComponent extends SetTimesInput implements OnInit {
 
   constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {
     super();
@@ -24,18 +24,41 @@ export class SetTimesArtistPage extends SetTimesInput implements OnInit {
   }
 
   ngOnInit() {
+    this.setupDefaultValues();
+  }
 
+  setupDefaultValues() {
+    if (!this.data.room.startTime) {
+      this.data.room.startTime = moment().format();
+    }
+
+    console.log(this.data.room.startTime);
   }
 
   ////////////////
   // Navigation //
   ////////////////
-  goToArtistSearchPage() {
-    this.nav.push(SetTimesArtistSearchPage);
+  goToAddArtistPage(editMode?: boolean) {
+    this.nav.push(SetTimesArtistComponent, {
+      editMode: editMode
+    });
   }
 
-  goToRoomPage() {
+  goToSetTimesPage() {
     this.nav.pop();
+  }
+
+  ///////////////////
+  // Button Events //
+  ///////////////////
+  addArtistButtonPressed() {
+    this.data.resetArtist();
+    this.goToAddArtistPage();
+  }
+
+  editArtistButtonPressed(artist: Artist) {
+    this.data.setArtist(artist);
+    this.goToAddArtistPage(true);
   }
 
   ///////////////////
@@ -43,13 +66,14 @@ export class SetTimesArtistPage extends SetTimesInput implements OnInit {
   ///////////////////
   saveButtonPressed() {
     console.log("Save button pressed");
+
     if (this.editMode) {
-      this.editArtistInRoom();
+
     }else{
-      this.addArtistToRoom();
+      this.data.addRoomToSetTimes();
     }
 
-    this.goToRoomPage();
+    this.goToSetTimesPage();
   }
 
   submitButtonPressed() {
@@ -63,16 +87,5 @@ export class SetTimesArtistPage extends SetTimesInput implements OnInit {
 
   deleteButtonPressed() {
     console.log("Delete button pressed");
-  }
-
-  ////////////////////
-  // Artist Methods //
-  ////////////////////
-  addArtistToRoom() {
-    this.data.addArtistToRoom();
-  }
-
-  editArtistInRoom() {
-    this.data.editArtistInRoom();
   }
 }

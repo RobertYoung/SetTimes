@@ -3,16 +3,16 @@ import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {Room} from './../../models/Room';
 import {SetTimes} from './../../models/SetTimes';
-import {SetTimesPage} from './../set-times/set-times.page';
-import {SetTimesInsertPage} from './../set-times-insert/set-times-insert.page';
+import {SetTimesComponent} from './../set-times/set-times';
+import {SetTimesInsertComponent} from './../set-times-insert/set-times-insert';
 import {SearchService} from '../../providers/helpers/search.service';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 @Component({
-  templateUrl: 'build/pages/event-detail/event-detail.page.html'
+  templateUrl: 'build/pages/event-detail/event-detail.html'
 })
 
-export class EventDetailPage {
+export class EventDetailComponent {
   editMode: boolean;
   event: Event;
 
@@ -24,14 +24,14 @@ export class EventDetailPage {
   // Navigation //
   ////////////////
   goToSetTimes(setTimes: SetTimes) {
-    this.nav.push(SetTimesPage, {
+    this.nav.push(SetTimesComponent, {
       event: this.event,
       setTimes: setTimes
     });
   }
 
   goToInsertSetTimes() {
-    this.nav.push(SetTimesInsertPage, {
+    this.nav.push(SetTimesInsertComponent, {
       event: this.event
     });
   }

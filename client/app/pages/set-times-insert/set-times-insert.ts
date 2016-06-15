@@ -1,64 +1,40 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {OnInit, Component} from '@angular/core';
 import {Event} from './../../models/Event';
-import {Room} from './../../models/Room';
-import {Artist} from './../../models/Artist';
 import {SetTimes} from './../../models/SetTimes';
-import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
+import {Room} from './../../models/Room';
+import {SetTimesRoomComponent} from './../set-times-room/set-times-room'
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
-import {SaveButtons} from '../../components/save-buttons/save-buttons.component';
-import * as moment from 'moment';
+import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.component';
 
 @Component({
-  templateUrl: 'build/pages/set-times-room/set-times-room.page.html',
-  directives: [SaveButtons]
+  templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html',
+  directives: [SaveButtonsComponent]
 })
-export class SetTimesRoomPage extends SetTimesInput implements OnInit {
+
+export class SetTimesInsertComponent extends SetTimesInput{
 
   constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {
     super();
 
+    this.data.event = navParams.data.event;
     this.editMode = navParams.data.editMode;
-  }
-
-  ngOnInit() {
-    this.setupDefaultValues();
-  }
-
-  setupDefaultValues() {
-    if (!this.data.room.startTime) {
-      this.data.room.startTime = moment().format();
-    }
-
-    console.log(this.data.room.startTime);
+    this.data.setTimes.createdBy.username = "TEST USER";
   }
 
   ////////////////
   // Navigation //
   ////////////////
-  goToAddArtistPage(editMode?: boolean) {
-    this.nav.push(SetTimesArtistPage, {
+  goToAddRoomPage(editMode?: boolean) {
+    this.nav.push(SetTimesRoomComponent, {
       editMode: editMode
     });
   }
 
-  goToSetTimesPage() {
+  goToEventDetails() {
     this.nav.pop();
-  }
-
-  ///////////////////
-  // Button Events //
-  ///////////////////
-  addArtistButtonPressed() {
-    this.data.resetArtist();
-    this.goToAddArtistPage();
-  }
-
-  editArtistButtonPressed(artist: Artist) {
-    this.data.setArtist(artist);
-    this.goToAddArtistPage(true);
   }
 
   ///////////////////
@@ -66,14 +42,13 @@ export class SetTimesRoomPage extends SetTimesInput implements OnInit {
   ///////////////////
   saveButtonPressed() {
     console.log("Save button pressed");
-
     if (this.editMode) {
 
     }else{
-      this.data.addRoomToSetTimes();
+      this.data.addSetTimesToEvent();
     }
 
-    this.goToSetTimesPage();
+    this.goToEventDetails();
   }
 
   submitButtonPressed() {
@@ -87,5 +62,15 @@ export class SetTimesRoomPage extends SetTimesInput implements OnInit {
 
   deleteButtonPressed() {
     console.log("Delete button pressed");
+  }
+
+  editRoomButtonPressed(room: Room) {
+    this.data.setRoom(room);
+    this.goToAddRoomPage(true);
+  }
+
+  insertRoomButtonPressed() {
+    this.data.resetRoom();
+    this.goToAddRoomPage();
   }
 }

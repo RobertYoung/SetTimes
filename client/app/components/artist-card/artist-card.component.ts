@@ -6,7 +6,7 @@ import {InAppBrowser} from 'ionic-native';
   selector: 'artist-card',
   templateUrl: 'build/components/artist-card/artist-card.component.html'
 })
-export class ArtistCard implements OnInit {
+export class ArtistCardComponent implements OnInit {
   @Input() artist: Artist;
   @Output() artistselected: EventEmitter<Artist> = new EventEmitter<Artist>();
 

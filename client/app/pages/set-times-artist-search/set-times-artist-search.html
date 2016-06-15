@@ -1,0 +1,13 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Spotify Search</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="searchArtist($event)"></ion-searchbar>
+  <ion-list>
+      <artist-card *ngFor="let artist of listOfArtists" [artist]="artist" (artistselected)="artistSelected($event)"></artist-card>
+  </ion-list>
+</ion-content>

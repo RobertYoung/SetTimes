@@ -4,7 +4,7 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
   selector: 'save-buttons',
   templateUrl: 'build/components/save-buttons/save-buttons.component.html'
 })
-export class SaveButtons implements OnInit {
+export class SaveButtonsComponent implements OnInit {
   @Output() previewButton: EventEmitter<void> = new EventEmitter<void>();
   @Output() saveButton: EventEmitter<void> = new EventEmitter<void>();
   @Output() submitButton: EventEmitter<void> = new EventEmitter<void>();

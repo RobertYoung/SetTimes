@@ -1,12 +1,12 @@
 import {Page, NavController} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {AuthService} from '../../providers/auth/auth.service';
-import {EventListPage} from '../event-list/event-list.page';
+import {EventListComponent} from '../event-list/event-list';
 
 @Component({
-  templateUrl: 'build/pages/login/login.page.html'
+  templateUrl: 'build/pages/login/login.html'
 })
-export class LoginPage {
+export class LoginComponent {
   auth: AuthService;
 
   constructor(private nav: NavController, auth: AuthService) {
@@ -18,6 +18,6 @@ export class LoginPage {
   }
 
   goToEvents() : void {
-    this.nav.setRoot(EventListPage);
+    this.nav.setRoot(EventListComponent);
   }
 }

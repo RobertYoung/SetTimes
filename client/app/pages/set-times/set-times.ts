@@ -3,12 +3,13 @@ import {Component} from '@angular/core';
 import {Event} from './../../models/Event';
 import {SetTimes} from './../../models/SetTimes';
 import {SearchService} from '../../providers/helpers/search.service';
+import {ArtistCardComponent} from '../../components/artist-card/artist-card.component';
 
 @Component({
-  templateUrl: 'build/pages/set-times/set-times.page.html'
+  templateUrl: 'build/pages/set-times/set-times.html',
+  directives: [ArtistCardComponent]
 })
-
-export class SetTimesPage {
+export class SetTimesComponent {
   event: Event;
   setTimes: SetTimes;
 

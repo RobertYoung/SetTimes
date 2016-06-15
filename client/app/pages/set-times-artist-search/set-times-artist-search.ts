@@ -4,15 +4,17 @@ import {SetTimesAPIService} from './../../providers/set-times/set-times.api.serv
 import {SpotifyArtist} from '../../models/SpotifyArtist';
 import {Artist} from '../../models/Artist';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
+import {ArtistCardComponent} from '../../components/artist-card/artist-card.component';
 import * as automapper from 'automapper-ts';
 
 // import * as automapper from 'automapper-ts';
 
 @Component({
-  templateUrl: 'build/pages/set-times-artist-search/set-times-artist-search.page.html'
+  templateUrl: 'build/pages/set-times-artist-search/set-times-artist-search.html',
+  directives: [ArtistCardComponent]
 })
 
-export class SetTimesArtistSearchPage implements OnInit {
+export class SetTimesArtistSearchComponent implements OnInit {
   searchQuery: string;
   listOfArtists: Array<SpotifyArtist>;
   errorMessage: string;

@@ -3,14 +3,14 @@ import {Http} from '@angular/http';
 import {Platform, MenuController, Nav, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
-import {LoginPage} from './pages/login/login.page';
+import {LoginComponent} from './pages/login/login';
 import {AuthService} from './providers/auth/auth.service';
 import {SetTimesDataService} from './providers/set-times/set-times.data.service';
 import {SetTimesAPIService} from './providers/set-times/set-times.api.service';
-import {EventListPage} from './pages/event-list/event-list.page';
+import {EventListComponent} from './pages/event-list/event-list';
 import {SearchService} from './providers/helpers/search.service';
-import {ArtistCard} from './components/artist-card/artist-card.component';
-import {SaveButtons} from './components/save-buttons/save-buttons.component';
+import {ArtistCardComponent} from './components/artist-card/artist-card.component';
+import {SaveButtonsComponent} from './components/save-buttons/save-buttons.component';
 import {SetTimesNavigationService} from './providers/set-times/set-times.navigation.service';
 import * as automapper from 'automapper-ts';
 
@@ -29,14 +29,14 @@ import * as automapper from 'automapper-ts';
   //   SetTimesAPIService,
   //   SetTimesNavigationService
   // ],
-  directives: [ArtistCard, SaveButtons]
+  directives: [ArtistCardComponent, SaveButtonsComponent]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
   // rootPage: any = HelloIonicPage;
-  rootPage: any = LoginPage; //EventListPage
+  rootPage: any = LoginComponent; //EventListPage
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -49,9 +49,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Events', component: EventListPage },
-      { title: 'Artists', component: EventListPage },
-      { title: 'Leaderboard', component: EventListPage }
+      { title: 'Events', component: EventListComponent },
+      { title: 'Artists', component: EventListComponent },
+      { title: 'Leaderboard', component: EventListComponent }
     ];
   }
 
@@ -74,7 +74,7 @@ export class MyApp {
   logout() {
     this.auth.logout();
     this.menu.close();
-    this.nav.setRoot(LoginPage);
+    this.nav.setRoot(LoginComponent);
   }
 
   mapper() {
