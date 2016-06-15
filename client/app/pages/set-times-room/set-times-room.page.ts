@@ -8,10 +8,12 @@ import {SetTimesArtistPage} from '../set-times-artist/set-times-artist.page';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
+import {SaveButtons} from '../../components/save-buttons/save-buttons.component';
 import * as moment from 'moment';
 
 @Component({
-  templateUrl: 'build/pages/set-times-room/set-times-room.page.html'
+  templateUrl: 'build/pages/set-times-room/set-times-room.page.html',
+  directives: [SaveButtons]
 })
 export class SetTimesRoomPage extends SetTimesInput implements OnInit {
 

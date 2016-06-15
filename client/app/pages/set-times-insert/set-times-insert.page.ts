@@ -7,9 +7,11 @@ import {SetTimesRoomPage} from './../set-times-room/set-times-room.page'
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
+import {SaveButtons} from '../../components/save-buttons/save-buttons.component';
 
 @Component({
-  templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html'
+  templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html',
+  directives: [SaveButtons]
 })
 
 export class SetTimesInsertPage extends SetTimesInput{
