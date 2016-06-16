@@ -11,7 +11,6 @@ import {EventListComponent} from './pages/event-list/event-list';
 import {SearchService} from './providers/helpers/search.service';
 import {ArtistCardComponent} from './components/artist-card/artist-card.component';
 import {SaveButtonsComponent} from './components/save-buttons/save-buttons.component';
-import {SetTimesNavigationService} from './providers/set-times/set-times.navigation.service';
 import * as automapper from 'automapper-ts';
 
 @Component({
@@ -117,8 +116,7 @@ ionicBootstrap(MyApp, [
   AuthService,
   SearchService,
   SetTimesDataService,
-  SetTimesAPIService,
-  SetTimesNavigationService
+  SetTimesAPIService
 ], {
   tabbarPlacement: 'bottom'
 });

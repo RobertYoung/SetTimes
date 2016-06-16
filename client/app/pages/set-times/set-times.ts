@@ -16,8 +16,6 @@ export class SetTimesComponent {
   constructor(private nav: NavController, navParams: NavParams, search: SearchService) {
     this.event = navParams.data.event;
     this.setTimes = navParams.data.setTimes;
-
-    console.log(this.setTimes);
   }
 
 }

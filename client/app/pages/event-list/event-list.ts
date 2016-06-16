@@ -12,7 +12,7 @@ import {Room} from '../../models/Room';
 export class EventListComponent {
   eventList: Array<Event>;
 
-  constructor(private nav: NavController, navParams: NavParams) {
+  constructor(private nav: NavController, private navParams: NavParams) {
     this.eventList = [];
 
     let setTimes1 = new SetTimes();

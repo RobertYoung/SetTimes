@@ -2,22 +2,22 @@
   <button menuToggle *ngIf="!selectedItem">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Create Event</ion-title>
+  <ion-title>Event Type</ion-title>
 </ion-navbar>
 
 <ion-content class="card-background-page">
 
-  <ion-card>
+  <ion-card (click)="goToEventInsertDetails()">
     <img src="img/stock/club-1.jpg"/>
     <div class="card-title">Club</div>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="goToEventInsertDetails()">
     <img src="img/stock/festival-1.jpg"/>
     <div class="card-title">Festival</div>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="goToEventInsertDetails()">
     <img src="img/stock/band-3.jpg"/>
     <div class="card-title">Band</div>
   </ion-card>

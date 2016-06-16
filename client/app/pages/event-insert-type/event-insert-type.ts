@@ -8,8 +8,14 @@ import {Event} from './../../models/Event';
 
 export class EventInsertTypeComponent {
 
-  constructor(private nav: NavController, navParams: NavParams) {
+  constructor(private nav: NavController, private navParams: NavParams) {
 
   }
 
+  ////////////////
+  // Navgiation //
+  ////////////////
+  // goToEventInsertDetails() {
+  //   this.navigation.goToEventInsertDetails();
+  // }
 }

@@ -4,8 +4,8 @@ import {Event} from './../../models/Event';
 import {SetTimes} from './../../models/SetTimes';
 import {Room} from './../../models/Room';
 import {SetTimesRoomComponent} from './../set-times-room/set-times-room'
+import {SetTimesComponent} from './../set-times/set-times'
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
-import {SetTimesNavigationService} from '../../providers/set-times/set-times.navigation.service';
 import {SetTimesInput} from './../common/set-times-input';
 import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.component';
 
@@ -16,7 +16,7 @@ import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.c
 
 export class SetTimesInsertComponent extends SetTimesInput{
 
-  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService, private setTimesNavigation: SetTimesNavigationService) {
+  constructor(private nav: NavController, navParams: NavParams, public data: SetTimesDataService) {
     super();
 
     this.data.event = navParams.data.event;
@@ -57,7 +57,11 @@ export class SetTimesInsertComponent extends SetTimesInput{
 
   previewButtonPressed() {
     console.log("Preview button pressed");
-    this.setTimesNavigation.goToSetTimesPreview(this.data.event, this.data.setTimes);
+
+    this.nav.push(SetTimesComponent, {
+      event: this.data.event,
+      setTimes: this.data.setTimes
+    });
   }
 
   deleteButtonPressed() {

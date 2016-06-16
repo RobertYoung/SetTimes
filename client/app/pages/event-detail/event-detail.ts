@@ -11,12 +11,12 @@ import {SetTimesDataService} from '../../providers/set-times/set-times.data.serv
 @Component({
   templateUrl: 'build/pages/event-detail/event-detail.html'
 })
-
 export class EventDetailComponent {
   editMode: boolean;
   event: Event;
 
-  constructor(private nav: NavController, private navParams: NavParams, private search: SearchService, private data: SetTimesDataService) {
+  constructor(private nav: NavController, private navParams: NavParams, private search: SearchService,
+              private data: SetTimesDataService) {
     this.event = navParams.data.event;
   }
 
