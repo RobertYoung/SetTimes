@@ -7,9 +7,10 @@ import {Event} from './../../models/Event';
 })
 
 export class EventInsertDetailsComponent {
+  event: Event;
 
   constructor(private nav: NavController, navParams: NavParams) {
-
+    this.event = navParams.data.event || new Event();
   }
 
 }

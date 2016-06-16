@@ -6,6 +6,52 @@
 </ion-navbar>
 
 <ion-content class="card-background-page">
+  <div padding>
+    Do you have a Facebook event?
+    <button block outline>Yes</button>
+    <button block outline (click)="event._id = 1">I don't have an event</button>
+  </div>
 
+  <div padding *ngIf="event._id">
+    <ion-list>
+
+      <!-- NAME -->
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <!-- /NAME -->
+
+      <!-- DESCRIPTION -->
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <!-- /DESCRIPTION -->
+
+      <!-- START TIME -->
+      <ion-item>
+        <ion-label stacked>Start Time</ion-label>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
+      </ion-item>
+      <!-- /START TIME -->
+
+      <!-- END TIME -->
+      <ion-item>
+        <ion-label stacked>End Time</ion-label>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
+      </ion-item>
+      <!-- /END TIME -->
+
+      <!-- NAME -->
+      <ion-item>
+        <ion-label stacked>Venue</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <!-- /NAME -->
+
+      <button block outline>Upload</button>
+    </ion-list>
+  </div>
 
 </ion-content>
