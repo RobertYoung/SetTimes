@@ -10,7 +10,7 @@ import {SetTimesInput} from './../common/set-times-input';
 import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.component';
 
 @Component({
-  templateUrl: 'build/pages/set-times-insert/set-times-insert.page.html',
+  templateUrl: 'build/pages/set-times-insert/set-times-insert.html',
   directives: [SaveButtonsComponent]
 })
 

@@ -12,7 +12,7 @@ import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.c
 import * as moment from 'moment';
 
 @Component({
-  templateUrl: 'build/pages/set-times-room/set-times-room.page.html',
+  templateUrl: 'build/pages/set-times-room/set-times-room.html',
   directives: [SaveButtonsComponent]
 })
 export class SetTimesRoomComponent extends SetTimesInput implements OnInit {
