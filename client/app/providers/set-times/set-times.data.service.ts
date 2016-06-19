@@ -15,6 +15,7 @@ export interface ISetTimesDataService {
 
 @Injectable()
 export class SetTimesDataService {
+  eventList: Array<Event> = [];
   event: Event;
   setTimes: SetTimes;
   room: Room;
@@ -78,7 +79,7 @@ export class SetTimesDataService {
   ///////////////////////
   // Set Times Methods //
   ///////////////////////
-  addSetTimesToEvent() {
+  addSetTimesToEvent = () => {
     this.event.setTimes.push(this.setTimes);
   }
 }

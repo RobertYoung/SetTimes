@@ -5,6 +5,7 @@ import {EventDetailComponent} from '../event-detail/event-detail';
 import {EventInsertTypeComponent} from '../event-insert-type/event-insert-type';
 import {SetTimes} from '../../models/set-times/SetTimes';
 import {Room} from '../../models/set-times/Room';
+import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 @Component({
   templateUrl: 'build/pages/event-list/event-list.html'
@@ -12,8 +13,8 @@ import {Room} from '../../models/set-times/Room';
 export class EventListComponent {
   eventList: Array<Event>;
 
-  constructor(private nav: NavController, private navParams: NavParams, public view: ViewController) {
-    this.eventList = [];
+  constructor(private nav: NavController, private navParams: NavParams, public view: ViewController, public data: SetTimesDataService) {
+    this.eventList = this.data.eventList;
 
     let setTimes1 = new SetTimes();
     setTimes1.createdBy = {

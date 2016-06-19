@@ -7,6 +7,7 @@ import {FacebookEventsModal} from '../facebook-events/facebook-events';
 import {SaveButtonsComponent} from '../../components/save-buttons/save-buttons.component';
 import {EventListComponent} from '../event-list/event-list';
 import * as automapper from 'automapper-ts';
+import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 
 @Component({
   templateUrl: 'build/pages/event-insert-details/event-insert-details.html',
@@ -16,7 +17,7 @@ export class EventInsertDetailsComponent {
   event: Event;
   eventListView: ViewController;
 
-  constructor(private nav: NavController, navParams: NavParams, public facebookAPIService: FacebookAPIService) {
+  constructor(private nav: NavController, navParams: NavParams, public facebookAPIService: FacebookAPIService, public data: SetTimesDataService) {
     this.event = navParams.data.event || new Event();
     this.eventListView = navParams.data.eventListView;
   }
@@ -43,7 +44,8 @@ export class EventInsertDetailsComponent {
 
     modal.onDismiss(data => {
         if (data.event) {
-          this.event = automapper.map("FBEvent", "Event", data.event);
+          const facebookEvent = automapper.map("FBEvent", "Event", data.event);
+          _.merge(this.event, facebookEvent);
           console.log(this.event);
         }
     });
@@ -52,7 +54,7 @@ export class EventInsertDetailsComponent {
   }
 
   saveEvent() {
-    // let test = this.nav.getPrevious(this.eventListView);
+    this.data.eventList.push(this.event);
     this.nav.popTo(this.eventListView);
   }
 }
