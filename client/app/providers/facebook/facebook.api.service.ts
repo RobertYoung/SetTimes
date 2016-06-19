@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import { AppVariables } from '../../app.variables';
 import {Facebook} from 'ionic-native';
-import {IFacebookEventSearchResponse} from '../../models/FacebookEventSearchResponse';
+import {IFacebookEventSearchResponse} from '../../models/facebook-event-search-response';
 
 @Injectable()
 export class FacebookAPIService {

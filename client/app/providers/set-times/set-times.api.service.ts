@@ -2,7 +2,7 @@ import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import { AppVariables } from '../../app.variables';
-import { SpotifyArtistSearchResponse } from '../../models/SpotifyArtistSearchResponse';
+import { SpotifyArtistSearchResponse } from '../../models/spotify-artist-search-response';
 
 @Injectable()
 export class SetTimesAPIService {

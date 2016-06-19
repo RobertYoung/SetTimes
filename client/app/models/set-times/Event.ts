@@ -1,4 +1,4 @@
-import {SetTimes} from './SetTimes';
+import {SetTimes} from './set-times';
 import * as _ from 'lodash';
 
 export class Event {

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ViewController, NavParams} from 'ionic-angular';
-import {FBEvent} from '../../models/facebook/FBEvent';
+import {FBEvent} from '../../models/facebook/event';
 
 @Component({
   templateUrl: 'build/pages/facebook-events/facebook-events.html'

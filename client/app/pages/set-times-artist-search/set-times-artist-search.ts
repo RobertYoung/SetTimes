@@ -1,8 +1,8 @@
 import {OnInit, Component} from '@angular/core';
 import {Page, NavController, NavParams, ViewController} from 'ionic-angular';
 import {SetTimesAPIService} from './../../providers/set-times/set-times.api.service';
-import {SpotifyArtist} from '../../models/spotify/SpotifyArtist';
-import {Artist} from '../../models/set-times/Artist';
+import {SpotifyArtist} from '../../models/spotify/artist';
+import {Artist} from '../../models/set-times/artist';
 import {SetTimesDataService} from '../../providers/set-times/set-times.data.service';
 import {ArtistCardComponent} from '../../components/artist-card/artist-card.component';
 import * as automapper from 'automapper-ts';

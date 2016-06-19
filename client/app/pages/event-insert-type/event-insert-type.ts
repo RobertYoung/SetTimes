@@ -1,6 +1,6 @@
 import {Page, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Component} from '@angular/core';
-import {Event} from './../../models/set-times/Event';
+import {Event} from './../../models/set-times/event';
 import {EventInsertDetailsComponent} from '../event-insert-details/event-insert-details';
 
 @Component({

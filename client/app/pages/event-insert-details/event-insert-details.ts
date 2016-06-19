@@ -1,6 +1,6 @@
 import {Page, NavController, NavParams, Modal, ViewController} from 'ionic-angular';
 import {Component} from '@angular/core';
-import {Event} from './../../models/set-times/Event';
+import {Event} from './../../models/set-times/event';
 import {Facebook} from 'ionic-native';
 import {FacebookAPIService} from '../../providers/facebook/facebook.api.service';
 import {FacebookEventsModal} from '../facebook-events/facebook-events';

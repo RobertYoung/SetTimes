@@ -1,4 +1,4 @@
-import {Artist} from './Artist';
+import {Artist} from './artist';
 
 export class Room {
   public name: string;

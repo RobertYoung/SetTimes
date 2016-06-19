@@ -1,5 +1,5 @@
-import {FBEvent} from './facebook/FBEvent';
-import {Paging} from './facebook/FBAPI';
+import {FBEvent} from './facebook/event';
+import {Paging} from './facebook/api';
 
 export interface IFacebookEventSearchResponse {
   data: FBEvent[];
