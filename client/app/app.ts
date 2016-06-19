@@ -16,19 +16,6 @@ import * as automapper from 'automapper-ts';
 
 @Component({
   templateUrl: 'build/app.html',
-  // providers: [
-  //   provide(AuthHttp, {
-  //     useFactory: (http) => {
-  //       return new AuthHttp(new AuthConfig(), http);
-  //     },
-  //     deps: [Http]
-  //   }),
-  //   AuthService,
-  //   SearchService,
-  //   SetTimesDataService,
-  //   SetTimesAPIService,
-  //   SetTimesNavigationService
-  // ],
   directives: [ArtistCardComponent, SaveButtonsComponent]
 })
 export class MyApp {
@@ -89,6 +76,12 @@ export class MyApp {
     automapper
       .createMap('FBEvent', 'Event')
       .forMember('name', function (opts) { opts.mapFrom('name'); })
+      .forMember('description', function (opts) { opts.mapFrom('description'); })
+      .forMember('facebookId', function (opts) { opts.mapFrom('id'); })
+      .forMember('startTime', function (opts) { opts.mapFrom('start_time'); })
+      .forMember('endTime', function (opts) { opts.mapFrom('end_time'); })
+      .forMember('venue', function (opts) { opts.mapFrom('place.name'); })
+      .forMember('imageUrl', function (opts) { opts.mapFrom('cover.source'); })
       .ignoreAllNonExisting();
 
     // Spotify to Artist

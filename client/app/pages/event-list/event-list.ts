@@ -1,4 +1,4 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {Event} from './../../models/set-times/Event';
 import {EventDetailComponent} from '../event-detail/event-detail';
@@ -12,7 +12,7 @@ import {Room} from '../../models/set-times/Room';
 export class EventListComponent {
   eventList: Array<Event>;
 
-  constructor(private nav: NavController, private navParams: NavParams) {
+  constructor(private nav: NavController, private navParams: NavParams, public view: ViewController) {
     this.eventList = [];
 
     let setTimes1 = new SetTimes();
@@ -124,6 +124,8 @@ export class EventListComponent {
   }
 
   createEventButtonPressed() {
-    this.nav.push(EventInsertTypeComponent);
+    this.nav.push(EventInsertTypeComponent, {
+      eventListView: this.view
+    });
   }
 }

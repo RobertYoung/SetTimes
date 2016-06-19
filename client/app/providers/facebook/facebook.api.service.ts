@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import { AppVariables } from '../../app.variables';
 import {Facebook} from 'ionic-native';
+import {IFacebookEventSearchResponse} from '../../models/FacebookEventSearchResponse';
 
 @Injectable()
 export class FacebookAPIService {
@@ -11,7 +12,7 @@ export class FacebookAPIService {
 
   constructor (private http: Http) {}
 
-  getUsersEvents() : Promise<any> {
+  getUsersEvents() : Promise<IFacebookEventSearchResponse> {
     return Facebook.api(`me/events?fields=${FacebookAPIService.FACEBOOK_REQUEST_FIELDS}`, []).then((data) => {
       console.log("Facebook events request:");
       console.log(data);

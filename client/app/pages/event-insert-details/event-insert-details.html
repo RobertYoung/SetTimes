@@ -12,46 +12,49 @@
     <button block outline (click)="event._id = 1">I don't have an event</button>
   </div>
 
-  <div padding *ngIf="event._id">
+  <div padding *ngIf="event._id || event.facebookId">
     <ion-list>
 
       <!-- NAME -->
       <ion-item>
         <ion-label stacked>Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="event.name"></ion-input>
       </ion-item>
       <!-- /NAME -->
 
       <!-- DESCRIPTION -->
       <ion-item>
         <ion-label stacked>Description</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea [(ngModel)]="event.description"></ion-textarea>
       </ion-item>
       <!-- /DESCRIPTION -->
 
       <!-- START TIME -->
       <ion-item>
         <ion-label stacked>Start Time</ion-label>
-        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
       </ion-item>
       <!-- /START TIME -->
 
       <!-- END TIME -->
       <ion-item>
         <ion-label stacked>End Time</ion-label>
-        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
       </ion-item>
       <!-- /END TIME -->
 
       <!-- NAME -->
       <ion-item>
         <ion-label stacked>Venue</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="event.venue"></ion-input>
       </ion-item>
       <!-- /NAME -->
 
+      <img src="{{event.imageUrl}}"/>
       <button block outline>Upload</button>
     </ion-list>
+
+    <save-buttons (saveButton)="saveEvent()"></save-buttons>
   </div>
 
 </ion-content>
