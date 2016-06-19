@@ -7,10 +7,12 @@ import {Facebook} from 'ionic-native';
 @Injectable()
 export class FacebookAPIService {
 
+  public static FACEBOOK_REQUEST_FIELDS = "fields=attending_count,cover,declined_count,description,id,end_time,maybe_count,name,noreply_count,owner,place,parent_group,rsvp_status,start_time,ticket_uri,timezone,updated_time";
+
   constructor (private http: Http) {}
 
   getUsersEvents() : Promise<any> {
-    return Facebook.api("me/events", []).then((data) => {
+    return Facebook.api(`me/events?fields=${FacebookAPIService.FACEBOOK_REQUEST_FIELDS}`, []).then((data) => {
       console.log("Facebook events request:");
       console.log(data);
       return data;

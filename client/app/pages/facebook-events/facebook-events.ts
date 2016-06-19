@@ -1,16 +1,17 @@
 import {Component} from '@angular/core';
-import {ViewController} from 'ionic-angular';
+import {ViewController, NavParams} from 'ionic-angular';
 
 @Component({
-  template: `
-  <ion-content padding>
-    <h2>I'm a modal!</h2>
-    <button (click)="close()">Close</button>
-  </ion-content>`
+  templateUrl: 'build/pages/facebook-events/facebook-events.html'
 })
 export class FacebookEventsModal {
-  constructor(
-    private viewCtrl: ViewController) {}
+  facebookEvents = [];
+
+  constructor(private viewCtrl: ViewController, private navParams: NavParams) {
+    this.facebookEvents = this.navParams.data.facebookEvents;
+
+    console.log(this.facebookEvents);
+  }
 
   close() {
     this.viewCtrl.dismiss();

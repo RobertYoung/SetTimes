@@ -26,13 +26,15 @@ export class EventInsertDetailsComponent {
   getUserEvents() {
     this.facebookAPIService.getUsersEvents().then((events) => {
       if (events) {
-        this.showFacebookEventsModal();
+        this.showFacebookEventsModal(events);
       }
     });
   }
 
-  showFacebookEventsModal() {
-    let modal = Modal.create(FacebookEventsModal);
+  showFacebookEventsModal(data) {
+    let modal = Modal.create(FacebookEventsModal, {
+      facebookEvents: data
+    });
     this.nav.present(modal);
   }
 }
