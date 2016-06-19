@@ -13,7 +13,13 @@ export class FacebookEventsModal {
     console.log(this.facebookEvents);
   }
 
-  close() {
-    this.viewCtrl.dismiss();
+  close(event?) {
+    this.viewCtrl.dismiss({
+      event: event
+    });
+  }
+
+  selectEvent(event) {
+    this.close(event);
   }
 }

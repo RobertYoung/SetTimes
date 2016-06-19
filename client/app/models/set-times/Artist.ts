@@ -1,4 +1,4 @@
-import { SpotifyArtist } from './SpotifyArtist';
+import { SpotifyArtist } from './../spotify/SpotifyArtist';
 
 export class Artist extends SpotifyArtist {
   public name: string;

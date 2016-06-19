@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Event} from '../../models/Event';
-import {SetTimes} from '../../models/SetTimes';
-import {Room} from '../../models/Room';
-import {Artist} from '../../models/Artist';
+import {Event} from '../../models/set-times/Event';
+import {SetTimes} from '../../models/set-times/SetTimes';
+import {Room} from '../../models/set-times/Room';
+import {Artist} from '../../models/set-times/Artist';
 import * as _ from 'lodash';
 
 export interface ISetTimesDataService {

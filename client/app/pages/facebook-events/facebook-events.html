@@ -11,7 +11,9 @@
 </ion-toolbar>
 
 <ion-content padding>
-  <ion-card *ngFor="let event of facebookEvents.data">
+  <ion-card *ngFor="let event of facebookEvents.data" (click)="selectEvent(event)">
+    <img src="{{event.cover?.source}}"/>
     <div class="card-title">{{event.name}}</div>
+    <div class="card-subtitle">{{event.place?.name}}</div>
   </ion-card>
 </ion-content>

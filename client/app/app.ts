@@ -86,6 +86,11 @@ export class MyApp {
       .forMember('external_urls.spotify', function (opts) { opts.mapFrom('permalink_url'); })
       .ignoreAllNonExisting();
 
+    automapper
+      .createMap('FBEvent', 'Event')
+      .forMember('name', function (opts) { opts.mapFrom('name'); })
+      .ignoreAllNonExisting();
+
     // Spotify to Artist
     // automapper
     //   .createMap('SpotifyArtist', 'Artist')

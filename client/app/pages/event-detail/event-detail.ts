@@ -1,8 +1,8 @@
 import {Page, NavController, NavParams, Alert} from 'ionic-angular';
 import {Component} from '@angular/core';
-import {Event} from './../../models/Event';
-import {Room} from './../../models/Room';
-import {SetTimes} from './../../models/SetTimes';
+import {Event} from './../../models/set-times/Event';
+import {Room} from './../../models/set-times/Room';
+import {SetTimes} from './../../models/set-times/SetTimes';
 import {SetTimesComponent} from './../set-times/set-times';
 import {SetTimesInsertComponent} from './../set-times-insert/set-times-insert';
 import {SearchService} from '../../providers/helpers/search.service';

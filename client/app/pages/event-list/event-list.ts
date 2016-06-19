@@ -1,10 +1,10 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Component} from '@angular/core';
-import {Event} from './../../models/Event';
+import {Event} from './../../models/set-times/Event';
 import {EventDetailComponent} from '../event-detail/event-detail';
 import {EventInsertTypeComponent} from '../event-insert-type/event-insert-type';
-import {SetTimes} from '../../models/SetTimes';
-import {Room} from '../../models/Room';
+import {SetTimes} from '../../models/set-times/SetTimes';
+import {Room} from '../../models/set-times/Room';
 
 @Component({
   templateUrl: 'build/pages/event-list/event-list.html'

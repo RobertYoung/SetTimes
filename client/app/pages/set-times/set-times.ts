@@ -1,7 +1,7 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {Component} from '@angular/core';
-import {Event} from './../../models/Event';
-import {SetTimes} from './../../models/SetTimes';
+import {Event} from './../../models/set-times/Event';
+import {SetTimes} from './../../models/set-times/SetTimes';
 import {SearchService} from '../../providers/helpers/search.service';
 import {ArtistCardComponent} from '../../components/artist-card/artist-card.component';
 

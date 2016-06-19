@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
-import {Event} from '../../models/Event';
-import {Room} from '../../models/Room';
-import {SetTimes} from '../../models/SetTimes';
+import {Event} from '../../models/set-times/Event';
+import {Room} from '../../models/set-times/Room';
+import {SetTimes} from '../../models/set-times/SetTimes';
 import * as _ from 'lodash';
 
 @Injectable()

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Artist} from '../../models/Artist';
+import {Artist} from '../../models/set-times/Artist';
 import {InAppBrowser} from 'ionic-native';
 
 @Component({
