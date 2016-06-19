@@ -10,7 +10,7 @@ export class SearchService {
   constructor() {}
 
   getSetTimesById(event: Event, id: number) : SetTimes {
-    return _.find(event.setTimes, (setTime: SetTimes) => {
+    return _.find(event.set_times, (setTime: SetTimes) => {
       return setTime._id === id;
     });
   }

@@ -61,7 +61,7 @@ export class SetTimesArtistComponent extends SetTimesInput implements OnInit {
 
     this.nav.push(SetTimesComponent, {
       event: this.data.event,
-      setTimes: this.data.setTimes
+      setTimes: this.data.set_times
     });
   }
 

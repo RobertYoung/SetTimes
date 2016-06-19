@@ -6,7 +6,7 @@
 </ion-navbar>
 
 <ion-content>
-  <img src="{{event.imageUrl}}"/>
+  <img src="{{event.image_url}}"/>
 
   <div padding>
     <h3>{{event.name}}</h3>
@@ -17,13 +17,13 @@
   </div>
 
   <h5 padding>Submitted Set Times</h5>
-  <ion-card *ngFor="let setTimes of event.setTimes" (click)="goToSetTimes(setTimes)">
+  <ion-card *ngFor="let set_times of event.set_times" (click)="goToSetTimes(set_times)">
     <ion-card-header>
-      {{setTimes.createdBy.username}}
+      {{set_times.created_by.username}}
     </ion-card-header>
     <ion-card-content>
-      <p>Rooms: {{setTimes.rooms.length}}</p>
-      <p>Artists: {{getTotalArtists(setTimes)}}</p>
+      <p>Rooms: {{set_times.rooms.length}}</p>
+      <p>Artists: {{getTotalArtists(set_times)}}</p>
       <p>Rating</p>
       <p>Vote Up</p>
       <p>Vote Down</p>

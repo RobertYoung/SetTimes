@@ -2,7 +2,7 @@ import {Artist} from './Artist';
 
 export class Room {
   public name: string;
-  public startTime: string;
+  public start_time: string;
   public artists: Array<Artist> = [];
 
   totalArtists() : number {

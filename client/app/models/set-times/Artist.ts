@@ -2,8 +2,8 @@ import { SpotifyArtist } from './../spotify/SpotifyArtist';
 
 export class Artist extends SpotifyArtist {
   public name: string;
-  public startTime: Date;
-  public endTime: Date;
-  public imageUrl: string;
-  public setLength: number;
+  public start_time: Date;
+  public end_time: Date;
+  public image_url: string;
+  public set_length: number;
 }

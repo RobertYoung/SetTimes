@@ -54,7 +54,7 @@ export class EventInsertDetailsComponent {
   }
 
   saveEvent() {
-    this.data.eventList.push(this.event);
+    this.data.event_list.push(this.event);
     this.nav.popTo(this.eventListView);
   }
 }

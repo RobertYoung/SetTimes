@@ -3,13 +3,13 @@ import * as _ from 'lodash';
 
 export class Event {
   public _id: string;
-  public facebookId: string;
+  public facebook_id: string;
   public name: string;
-  public startTime: Date;
-  public endTime: Date;
+  public start_time: Date;
+  public end_time: Date;
   public venue: string;
-  public imageUrl: string;
-  public setTimes: Array<SetTimes> = [];
+  public image_url: string;
+  public set_times: Array<SetTimes> = [];
 
   constructor() {}
 

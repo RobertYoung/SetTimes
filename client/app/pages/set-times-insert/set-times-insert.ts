@@ -21,7 +21,7 @@ export class SetTimesInsertComponent extends SetTimesInput{
 
     this.data.event = navParams.data.event;
     this.editMode = navParams.data.editMode;
-    this.data.setTimes.createdBy.username = "TEST USER";
+    this.data.set_times.created_by.username = "TEST USER";
   }
 
   ////////////////
@@ -60,7 +60,7 @@ export class SetTimesInsertComponent extends SetTimesInput{
 
     this.nav.push(SetTimesComponent, {
       event: this.data.event,
-      setTimes: this.data.setTimes
+      setTimes: this.data.set_times
     });
   }
 

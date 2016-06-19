@@ -28,11 +28,11 @@ export class SetTimesRoomComponent extends SetTimesInput implements OnInit {
   }
 
   setupDefaultValues() {
-    if (!this.data.room.startTime) {
-      this.data.room.startTime = moment().format();
+    if (!this.data.room.start_time) {
+      this.data.room.start_time = moment().format();
     }
 
-    console.log(this.data.room.startTime);
+    console.log(this.data.room.start_time);
   }
 
   ////////////////
@@ -84,7 +84,7 @@ export class SetTimesRoomComponent extends SetTimesInput implements OnInit {
     console.log("Preview button pressed");
     this.nav.push(SetTimesComponent, {
       event: this.data.event,
-      setTimes: this.data.setTimes
+      setTimes: this.data.set_times
     });
   }
 

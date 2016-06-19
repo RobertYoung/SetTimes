@@ -69,7 +69,7 @@ export class MyApp {
     automapper
       .createMap('SoundcloudArtist', 'Artist')
       .forMember('name', function (opts) { opts.mapFrom('username'); })
-      .forMember('imageUrl', function (opts) { opts.mapFrom('avatar_url'); })
+      .forMember('image_url', function (opts) { opts.mapFrom('avatar_url'); })
       .forMember('external_urls.spotify', function (opts) { opts.mapFrom('permalink_url'); })
       .ignoreAllNonExisting();
 
@@ -77,11 +77,11 @@ export class MyApp {
       .createMap('FBEvent', 'Event')
       .forMember('name', function (opts) { opts.mapFrom('name'); })
       .forMember('description', function (opts) { opts.mapFrom('description'); })
-      .forMember('facebookId', function (opts) { opts.mapFrom('id'); })
-      .forMember('startTime', function (opts) { opts.mapFrom('start_time'); })
-      .forMember('endTime', function (opts) { opts.mapFrom('end_time'); })
+      .forMember('facebook_id', function (opts) { opts.mapFrom('id'); })
+      .forMember('start_time', function (opts) { opts.mapFrom('start_time'); })
+      .forMember('end_time', function (opts) { opts.mapFrom('end_time'); })
       .forMember('venue', function (opts) { opts.mapFrom('place.name'); })
-      .forMember('imageUrl', function (opts) { opts.mapFrom('cover.source'); })
+      .forMember('image_url', function (opts) { opts.mapFrom('cover.source'); })
       .ignoreAllNonExisting();
 
     // Spotify to Artist

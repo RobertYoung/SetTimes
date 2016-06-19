@@ -50,7 +50,7 @@ export class SetTimesArtistSearchComponent implements OnInit {
                         let spotify = <Array<Artist>>data.spotify.items.map((spotify) => {
                           const imageUrl = spotify.images.length ? spotify.images[0].url : '';
                           const artist = <Artist>spotify;
-                          artist.imageUrl = imageUrl;
+                          artist.image_url = imageUrl;
                           // return automapper.map("SpotifyArtist", "Artist", spotify);
                           return spotify;
                         });

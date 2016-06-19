@@ -18,7 +18,7 @@
   <ion-searchbar></ion-searchbar>
 
   <ion-card *ngFor="let event of eventList" (click)="eventPressed($event, event)">
-    <img src="{{event.imageUrl}}"/>
+    <img src="{{event.image_url}}"/>
     <div class="card-title">{{event.name}}</div>
     <div class="card-subtitle">{{event.venue}}</div>
   </ion-card>

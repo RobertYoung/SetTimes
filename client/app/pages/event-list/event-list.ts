@@ -14,106 +14,106 @@ export class EventListComponent {
   eventList: Array<Event>;
 
   constructor(private nav: NavController, private navParams: NavParams, public view: ViewController, public data: SetTimesDataService) {
-    this.eventList = this.data.eventList;
+    this.eventList = this.data.event_list;
 
     let setTimes1 = new SetTimes();
-    setTimes1.createdBy = {
+    setTimes1.created_by = {
       username: "BobbyYoung"
     };
-    setTimes1.createdOn = new Date();
+    setTimes1.created_on = new Date();
     setTimes1.votes = 15;
     setTimes1.rooms = [<Room>
       {
         name: "Paradise",
-        startTime: "",
+        start_time: "",
         artists: [
           {
             name: "Jamie Jones",
-            startTime: new Date(),
-            setLength: 120,
-            imageUrl: "img/dummy/artist2.jpg"
+            start_time: new Date(),
+            set_length: 120,
+            image_url: "img/dummy/artist2.jpg"
           },
           {
             name: "Joseph Capriati",
-            startTime: new Date(),
-            setLength: 120,
-            imageUrl: "img/dummy/artist3.jpg"
+            start_time: new Date(),
+            set_length: 120,
+            image_url: "img/dummy/artist3.jpg"
           },
           {
             name: "KiNK",
-            startTime: new Date(),
-            setLength: 120,
-            imageUrl: "img/dummy/artist4.jpg"
+            start_time: new Date(),
+            set_length: 120,
+            image_url: "img/dummy/artist4.jpg"
           },
           {
             name: "Black Coffee",
-            startTime: new Date(),
-            setLength: 120,
-            imageUrl: "img/dummy/artist6.jpg"
+            start_time: new Date(),
+            set_length: 120,
+            image_url: "img/dummy/artist6.jpg"
           },
           {
             name: "Patrick Topping",
-            startTime: new Date(),
-            setLength: 120,
-            imageUrl: "img/dummy/artist5.jpg"
+            start_time: new Date(),
+            set_length: 120,
+            image_url: "img/dummy/artist5.jpg"
           }
         ]
       },
       <Room>
         {
           name: "Elrow",
-          startTime: "",
+          start_time: "",
           artists: [
             {
               name: "Eats Everything",
-              startTime: new Date(),
-              setLength: 120,
-              imageUrl: "img/dummy/artist7.jpg"
+              start_time: new Date(),
+              set_length: 120,
+              image_url: "img/dummy/artist7.jpg"
             },
             {
               name: "Joris Voorn",
-              startTime: new Date(),
-              setLength: 120,
-              imageUrl: "img/dummy/artist8.jpg"
+              start_time: new Date(),
+              set_length: 120,
+              image_url: "img/dummy/artist8.jpg"
             },
             {
               name: "Jackmaster",
-              startTime: new Date(),
-              setLength: 120,
-              imageUrl: "img/dummy/artist9.jpg"
+              start_time: new Date(),
+              set_length: 120,
+              image_url: "img/dummy/artist9.jpg"
             },
             {
               name: "Skream",
-              startTime: new Date(),
-              setLength: 120,
-              imageUrl: "img/dummy/artist10.jpg"
+              start_time: new Date(),
+              set_length: 120,
+              image_url: "img/dummy/artist10.jpg"
             }          ]
         }
     ];
 
     this.eventList.push(<Event>{
       name: "Parklife",
-      imageUrl: "img/dummy/event1.jpg",
+      image_url: "img/dummy/event1.jpg",
       venue: "Heaton Park",
-      startTime: new Date(),
-      setTimes: [setTimes1]
+      start_time: new Date(),
+      set_times: [setTimes1]
     });
 
     this.eventList.push(<Event>{
       name: "Ants",
-      imageUrl: "img/dummy/event2.png",
+      image_url: "img/dummy/event2.png",
       venue: "Ushuaia Hotel"
     });
 
     this.eventList.push(<Event>{
       name: "Usual Suspects",
-      imageUrl: "img/dummy/event3.jpg",
+      image_url: "img/dummy/event3.jpg",
       venue: "Sankeys Ibiza"
     });
 
     this.eventList.push(<Event>{
       name: "Vagabundos",
-      imageUrl: "img/dummy/event4.jpg",
+      image_url: "img/dummy/event4.jpg",
       venue: "Pacha Ibiza"
     });
   }
